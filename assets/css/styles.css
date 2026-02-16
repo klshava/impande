@@ -180,11 +180,13 @@ section{
 }
 
 .brand-logo{
-  height: clamp(14px, 2.2vw, 18px);
-  width: auto;
+  height: 18px !important;   /* try 14px if you want it tiny */
+  width: auto !important;
+  max-width: 90px;           /* stops wide logos taking over */
   display: block;
-  opacity: .9;
+  object-fit: contain;
 }
+
 
 .brand-wordmark{
   font-weight: 800;
