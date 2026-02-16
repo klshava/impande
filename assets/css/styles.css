@@ -409,12 +409,48 @@ section{
     radial-gradient(700px 420px at 20% 20%, rgba(47,74,62,.18), transparent 60%);
 }
 
-/* Give services a different background so it doesn’t blend with intro */
-.services-preview{
-  background: rgba(251,247,239,.55);
+/* Simple services (PPC-like list) */
+.services-simple{
+  background:
+    radial-gradient(900px 420px at 15% 10%, rgba(47,74,62,.10), transparent 60%),
+    linear-gradient(180deg, rgba(17,17,17,.03), rgba(17,17,17,.01)),
+    rgba(251,247,239,.72);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+
+.services-simple-inner{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.services-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+}
+
+.services-list li{
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(246,241,230,.65);
+  box-shadow: 0 6px 14px rgba(17,17,17,.05);
+  font-weight: 700;
+}
+
+.services-simple-actions{
+  margin-top: 6px;
+}
+
+@media (max-width: 880px){
+  .services-list{ grid-template-columns: 1fr; }
+}
+
 
 @media (max-width: 880px){
   .intro-inner{ grid-template-columns: 1fr; }
