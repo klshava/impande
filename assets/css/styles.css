@@ -170,6 +170,52 @@ section{
   max-width: 72ch;
   margin-bottom: 24px;
 }
+
+/* Brand logo + wordmark */
+.brand-link{
+  display:flex;
+  align-items:center;
+  gap: .65rem;
+  text-decoration:none;
+}
+
+.brand-logo{
+  height: 26px;      /* tweak 22–30px to taste */
+  width: auto;
+  display:block;
+  opacity: .92;      /* subtle like modern agency headers */
+}
+
+.brand-wordmark{
+  font-weight: 800;
+  letter-spacing: .01em;
+  font-size: 1.05rem;
+  line-height: 1;
+  display:inline-flex;
+  align-items:baseline;
+}
+
+/* Requested colors: “i” and “.” white, “Mpande” green */
+.wm-i, .wm-dot{
+  color: rgba(255,255,255,.92);
+}
+.wm-mpande{
+  color: var(--green);
+}
+
+/* Because header background is light, ensure the wordmark only turns white on dark/video hero headers */
+.site-header .wm-i,
+.site-header .wm-dot{
+  color: var(--text); /* default in the sticky header */
+}
+
+/* Optional: if you want the header to sit over the video hero and look “Hoorah-like”, you can make the header text light when on top of hero */
+.hero--video .wm-i,
+.hero--video .wm-dot{
+  color: rgba(255,255,255,.92);
+}
+
+
 .section-header p{ color: var(--muted); }
 
 /* Hero */
