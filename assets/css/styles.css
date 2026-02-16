@@ -180,7 +180,7 @@ section{
 }
 
 .brand-logo{
-  height: 18px !important;   /* try 14px if you want it tiny */
+  height: 36px !important;   /* try 14px if you want it tiny */
   width: auto !important;
   max-width: 90px;           /* stops wide logos taking over */
   display: block;
