@@ -180,10 +180,10 @@ section{
 }
 
 .brand-logo{
-  height: 26px;      /* tweak 22–30px to taste */
+  height: clamp(14px, 2.2vw, 18px);
   width: auto;
-  display:block;
-  opacity: .92;      /* subtle like modern agency headers */
+  display: block;
+  opacity: .9;
 }
 
 .brand-wordmark{
