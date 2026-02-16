@@ -14,7 +14,8 @@
   --green-2: #22362e;
   --brown: #6b4b2a;       /* earthy brown */
   --brown-2: #4d341d;
-
+  --red: #8b3a3a;
+   
   --shadow: 0 10px 30px rgba(17,17,17,.10);
   --radius: 18px;
 
@@ -199,7 +200,7 @@ section{
 
 /* Requested colors: “i” and “.” white, “Mpande” green */
 .wm-i, .wm-dot{
-  color: rgba(255,0,0,0);
+  color: var(--red);
 }
 .wm-mpande{
   color: var(--green);
@@ -214,7 +215,7 @@ section{
 /* Optional: if you want the header to sit over the video hero and look “Hoorah-like”, you can make the header text light when on top of hero */
 .hero--video .wm-i,
 .hero--video .wm-dot{
-  color: rgba(255,0,0,0);
+  color: var(--red);
 }
 
 
