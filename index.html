@@ -130,6 +130,22 @@
     height: 100%;
     object-fit: contain;
 }
+
+        
+/* Calender style */
+.calendar-button-container .calendar-scheduling-button {
+  background: var(--deep-green) !important;
+  border-radius: 9999px !important;
+  font-weight: 500 !important;
+  font-size: 1.125rem !important;
+  padding: 1rem 2rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.calendar-button-container .calendar-scheduling-button:hover {
+  background: var(--earth-brown) !important;
+  transform: translateY(-2px) !important;
+}
+
     </style>
 </head>
 <body class="root-bg">
@@ -165,6 +181,11 @@
                 <i data-lucide="menu" id="menu-icon"></i>
             </button>
         </div>
+
+        <!-- Google Calendar Button - iMpande Styled -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async defer></script>
+
     </header>
 
     <!-- MOBILE MENU -->
@@ -191,7 +212,25 @@
                 Rooted in wisdom. Growing toward wholeness. Culturally responsive counselling and supervision designed for women to be fully seen, heard, and supported.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 translate-y-8 reveal" style="transition-delay: 600ms;">
-                <a href="#contact" class="btn-primary px-8 py-4 rounded-full text-lg font-medium w-full sm:w-auto">Book a Free 30-Minute Call</a>
+               <!-- <a href="#contact" class="btn-primary px-8 py-4 rounded-full text-lg font-medium w-full sm:w-auto">Book a Free 30-Minute Call</a> -->
+
+                <div class="calendar-button-container mt-4 md:mt-0">
+                  <script>
+                  (function() {
+                    var target = document.currentScript.parentNode;
+                    window.addEventListener('load', function() {
+                      calendar.schedulingButton.load({
+                        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0iCdao7xKkdetZWgIXmMbOfXfHzNd2Kf9sf-mCJ6d2S8GCdon5oSINjZpq1TXyG0R_rwW5gpJ8?gv=true',
+                        color: '#1B2B23',  // Your deep-green color
+                        label: 'Book Free 30-Min Call',
+                        target: target,
+                      });
+                    });
+                  })();
+                  </script>
+                </div>
+
+                
                 <a href="#support" class="px-8 py-4 rounded-full text-lg font-medium border border-stone-300 hover:bg-stone-50 transition-colors w-full sm:w-auto">Explore Our Support</a>
             </div>
         </div>
