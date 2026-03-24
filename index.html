@@ -143,6 +143,10 @@
                     <span class="text-2xl font-semibold tracking-tight text-green-900 leading-none serif">iMpande</span>
                     <span class="text-[10px] uppercase tracking-widest text-stone-500 mt-1">Counselling & Supervision</span>
                 </div>
+                <div class="md:block hidden ml-8 w-24 h-1 bg-stone-200 rounded-full overflow-hidden relative group-hover:w-32 transition-all duration-300">
+                    <div id="scroll-progress" class="h-full bg-green-900 transition-all duration-300" style="width:0%" aria-label="Page scroll progress"></div>
+                </div>
+                    
             </a>
 
             <!-- Desktop Nav -->
@@ -749,6 +753,14 @@ document.getElementById("prevVideo").onclick = () => {
 function updateCarousel(){
     carousel.style.transform = `translateX(-${index * 100}%)`;
 }
+
+// Scroll progress indicator
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = Math.min((scrollTop / docHeight) * 100, 100);
+    document.getElementById('scroll-progress').style.width = progress + '%';
+});
 </script>
 
 </body>
