@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+     <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <!-- CDNs -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -96,10 +99,210 @@
             width: 100%;
         }
 
-        .testimonial-card, .video-card {
+  /* ===== TESTIMONIAL SLIDER STYLES ===== */
+        .testimonial-slider-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .swiper {
+            width: 100%;
+            padding: 0;
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+        }
+
+        .testimonial-card {
             background: white;
-            border: 1px solid rgba(27,43,35,0.05);
+            border: 1px solid rgba(27, 43, 35, 0.08);
+            border-radius: 2rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 10px 30px -5px rgba(27, 43, 35, 0.06);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 120px;
+            font-family: 'Crimson Pro', serif;
+            color: rgba(197, 160, 89, 0.08);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars i {
+            color: #f59e0b;
+        }
+
+        .testimonial-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(27, 43, 35, 0.08);
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--muted-gold), var(--deep-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .author-info span {
+            display: block;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--deep-green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .author-role {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+        }
+
+        /* Navigation Controls */
+        .testimonial-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: static;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid rgba(27, 43, 35, 0.15);
+            background: white;
+            color: var(--deep-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 0;
+            top: auto;
+            left: auto;
+            right: auto;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            content: '';
+            font-size: 0;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            background: var(--deep-green);
+            color: white;
+            border-color: var(--deep-green);
+            transform: scale(1.05);
+        }
+
+        .swiper-button-prev {
+            transform: scaleX(-1);
+        }
+
+        /* Pagination dots */
+        .swiper-pagination {
+            position: static;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(27, 43, 35, 0.15);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--deep-green);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                padding: 2rem 1.5rem;
+                min-height: auto;
+            }
+
+            .testimonial-text {
+                font-size: 1.125rem;
+                line-height: 1.6;
+            }
+
+            .testimonial-nav {
+                gap: 1rem;
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 40px;
+                height: 40px;
+            }
         }
         
         .video-card:hover {
@@ -526,79 +729,134 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="section-padding">
+     <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="section-padding mt-20">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl text-center text-green-950 mb-16">Voices of Healing</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card p-10 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-500 mb-6">
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-green-800 mb-4">Client Experiences</h4>
+                <h2 class="text-5xl md:text-6xl text-green-950 serif leading-tight">Voices of Healing</h2>
+                <div class="w-24 h-1 bg-muted-gold mx-auto mt-8 rounded-full opacity-40"></div>
+            </div>
+
+            <!-- Testimonial Slider -->
+            <div class="testimonial-slider-wrapper">
+                <div class="swiper testimonial-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div>
+                                    <div class="testimonial-stars">
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        "Working with Simangaliso as my supervisor has been an incredibly enriching and transformative experience. From our very first session, I felt truly seen, heard and supported. Simangaliso brings an empathetic, kind, and calm presence, creating a truly safe and warm space where supervisor and supervisee power dynamics are balanced, meaning that I could bring my whole authentic self. She has a way with words that makes you feel comfortable, safe and validated but at the same time she is able to lead with curiosity to help you reflect on your unconscious belief systems that could be holding you back."
+                                    </p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">AC</div>
+                                    <div class="author-info">
+                                        <span class="author-name">Anonymous Client</span>
+                                        <span class="author-role">Supervision</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-stone-600 italic leading-relaxed mb-6">"
-                            Working with Simangaliso as my supervisor has been an incredibly enriching and transformative experience. From our very first session, I felt truly seen, heard and supported. Simangaliso brings an empathetic, kind, and calm presence, creating a truly safe and warm space where supervisor and supervisee power dynamics are balanced, meaning that I could bring my whole authentic self. She has a way with words that makes you feel comfortable, safe and validated but at the same time she is able to lead with curiosity to help you reflect on your unconscious belief systems that could be holding you back and uncovering the ways internalised systems of power can shape how we show up in our mind, work and in the world.
-                        </p>
-                    </div>
-                    <span class="text-xs uppercase tracking-widest font-bold text-stone-400">— Anonymous Client</span>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card p-10 rounded-2xl flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-500 mb-6">
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div>
+                                    <div class="testimonial-stars">
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        "In a world that is built around, mostly caters and centres whiteness, it's rare to find someone who I could talk to about race, power dynamics and how to navigate systems that are not made for people of colour without some discomfort. Simangaliso creates a rare and safe space for non-white practitioners to openly discuss whiteness, power dynamics and white supremacy, which are topics that are often unsafe or uncomfortable to explore in general but mostly in professional contexts. Her deep understanding of how race and ethnicity shape experiences allows for honest, validating, and ultimately liberating conversations."
+                                    </p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">AC</div>
+                                    <div class="author-info">
+                                        <span class="author-name">Anonymous Client</span>
+                                        <span class="author-role">Professional Practitioner</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-stone-600 italic leading-relaxed mb-6">"
-                            In a world that is built around, mostly caters and centres whiteness, it’s rare to find someone who I could talk to about race, power dynamics and how to navigate systems that are not made for people of colour without some discomfort. Simangaliso creates a rare and safe space for non-white practitioners to openly discuss whiteness, power dynamics and white supremacy, which are topics that are often unsafe or uncomfortable to explore in general but mostly in professional contexts. Her deep understanding of how race and ethnicity shape experiences allows for honest, validating, and ultimately liberating conversations. These conversations are insightful, important, and extremely powerful, as there are not many spaces where these can happen, thus it’s detrimental for people of colour to have at least one space where they can feel genuinely seen, heard and supported."
-                        </p>
-                    </div>
-                    <span class="text-xs uppercase tracking-widest font-bold text-stone-400">— Anonymous Client</span>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card p-10 rounded-2xl flex flex-col justify-between lg:col-span-1 md:col-span-2">
-                    <div>
-                        <div class="flex text-amber-500 mb-6">
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div>
+                                    <div class="testimonial-stars">
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        "Simangaliso uses a deeply informed decolonised lens, drawing on her extensive experience with multicultural communities and her ability to see the interconnectedness of systemic power, race, and language. She offered practical, holistic skills alongside thoughtful reflection, which helped me embed a decolonised practice into my work in a world that often does not value or recognise it. She has reminded me that I am not alone in these systems and has continually reinforced the importance and possibility of working in ways that centre a decolonial way of being."
+                                    </p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">AC</div>
+                                    <div class="author-info">
+                                        <span class="author-name">Anonymous Client</span>
+                                        <span class="author-role">Multicultural Practice</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-stone-600 italic leading-relaxed mb-6">"
-                            Simangaliso uses a deeply informed decolonised lens, drawing on her extensive experience with multicultural communities and her ability to see the interconnectedness of systemic power, race, and language. She offered practical, holistic skills alongside thoughtful reflection, which helped me embed a decolonised practice into my work in a world that often does not value or recognise it. She has reminded me that I am not alone in these systems and has continually reinforced the importance and possibility of working in ways that centre a decolonial way of being.
-                            "</p>
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div>
+                                    <div class="testimonial-stars">
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        "Simangaliso is a trailblazer; she is paving the road for the future of multicultural social workers and young people. She has a wealth of knowledge and she would add an immense amount of value to anyone who she supervises, but especially people of colour. Anyone who has the opportunity to be supervised by her will benefit from her abundance of knowledge, her ability to decolonise thinking and practice, and her innovative approach to social work with multicultural communities. Whether you want to challenge your own perspectives, deepen your understanding of systemic power, or make meaningful change in the lives of multicultural people, Simangaliso's supervision will enrich both your professional journey and your personal growth."
+                                    </p>
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">AC</div>
+                                    <div class="author-info">
+                                        <span class="author-name">Anonymous Client</span>
+                                        <span class="author-role">Social Work Supervision</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="text-xs uppercase tracking-widest font-bold text-stone-400">— Anonymous Client</span>
                 </div>
 
-                 <!-- Testimonial 4 -->
-                <div class="testimonial-card p-10 rounded-2xl flex flex-col justify-between lg:col-span-1 md:col-span-2">
-                    <div>
-                        <div class="flex text-amber-500 mb-6">
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        </div>
-                        <p class="text-stone-600 italic leading-relaxed mb-6">"
-                            Simangaliso is a trailblazer; she is paving the road for the future of multicultural social workers and young people. She has a wealth of knowledge and she would add an immense amount of value to anyone who she supervises, but especially people of colour. Anyone who has the opportunity to be supervised by her will benefit from her abundance of knowledge, her ability to decolonise thinking and practice, and her innovative approach to social work with multicultural communities. Whether you want to challenge your own perspectives, deepen your understanding of systemic power, or make meaningful change in the lives of multicultural people, Simangaliso’s supervision will enrich both your professional journey and your personal growth while making you feel like you genuinely have someone cheering for your success.
-                            "</p>
+                <!-- Navigation & Pagination -->
+                <div class="flex flex-col items-center">
+                    <div class="testimonial-nav">
+                        <button class="swiper-button-prev">
+                            <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                        </button>
+                        <button class="swiper-button-next">
+                            <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                        </button>
                     </div>
-                    <span class="text-xs uppercase tracking-widest font-bold text-stone-400">— Anonymous Client</span>
+                    <div class="swiper-pagination"></div>
                 </div>
-
-
-                
             </div>
         </div>
     </section>
@@ -875,6 +1133,52 @@ window.addEventListener('scroll', () => {
     const progress = Math.min((scrollTop / docHeight) * 100, 100);
     document.getElementById('scroll-progress').style.width = progress + '%';
 });
+        
+ src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+    
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize Swiper
+        const swiper = new Swiper('.testimonial-swiper', {
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 600,
+            loop: true,
+            autoplay: {
+                delay: 8000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true,
+            },
+            a11y: {
+                enabled: true,
+            }
+        });
+
+        // Pause autoplay on hover
+        document.querySelector('.testimonial-slider-wrapper').addEventListener('mouseenter', () => {
+            swiper.autoplay.stop();
+        });
+
+        document.querySelector('.testimonial-slider-wrapper').addEventListener('mouseleave', () => {
+            swiper.autoplay.start();
+        });
+
+
+        
 </script>
 
 </body>
