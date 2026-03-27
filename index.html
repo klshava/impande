@@ -183,6 +183,25 @@
     }
 
 
+    /* Testimonial style */
+
+ @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+}
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.scrollbar-thin::-webkit-scrollbar { height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: #f1f5f9; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+
 
     </style>
    
@@ -527,78 +546,69 @@
     </section>
 
     <!-- TESTIMONIALS -->
-   
-<section id="testimonials" class="section-padding">
+    <section id="testimonials" class="section-padding py-16 bg-gray-50">
     <div class="container mx-auto px-6">
         <h2 class="text-3xl md:text-4xl text-center text-green-950 mb-12">Voices of Healing</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-            <!-- Testimonial 1 -->
-            <div class="testimonial-card p-6 rounded-xl flex flex-col justify-between min-h-[300px] bg-white shadow-lg hover:shadow-xl transition-shadow">
-                <div>
-                    <div class="flex text-amber-500 mb-4">
+        <div class="flex overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth gap-4 scrollbar-thin scrollbar-thumb-stone-400 scrollbar-track-stone-200 md:gap-6" x-data="testimonials()" @keydown.escape.window="showModal = false">
+            <template x-for="(testimonial, index) in testimonials" :key="index">
+                <div 
+                    class="testimonial-tile flex-none w-72 md:w-80 h-64 p-6 rounded-xl bg-white shadow-lg hover:shadow-xl hover:scale-105 transition-all cursor-pointer snap-center border border-stone-200 flex flex-col"
+                    @click="openModal(index)"
+                    x-intersect.once="$el.classList.add('animate-fade-in')"
+                >
+                    <div class="flex text-amber-500 mb-3">
                         <i data-lucide="star" class="h-4 w-4 fill-current"></i>
                         <i data-lucide="star" class="h-4 w-4 fill-current"></i>
                         <i data-lucide="star" class="h-4 w-4 fill-current"></i>
                         <i data-lucide="star" class="h-4 w-4 fill-current"></i>
                         <i data-lucide="star" class="h-4 w-4 fill-current"></i>
                     </div>
-                    <p class="text-stone-600 italic leading-relaxed mb-6 text-sm">
-                        "Working with Simangaliso as my supervisor has been an incredibly enriching and transformative experience. From our very first session, I felt truly seen, heard and supported. Simangaliso brings an empathetic, kind, and calm presence..."
-                    </p>
+                    <p x-text="testimonial.quote" class="text-stone-600 italic leading-relaxed flex-1 line-clamp-3 mb-4 text-sm"></p>
+                    <span class="text-xs uppercase tracking-widest font-bold text-stone-400 self-end">— Anonymous Client</span>
                 </div>
-                <span class="text-xs uppercase tracking-widest font-bold text-stone-400 self-end">— Anonymous Client</span>
+            </template>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div 
+        x-show="showModal" 
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @click="showModal = false"
+        class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-6"
+        x-trap.inert="showModal"
+        aria-modal="true"
+        role="dialog"
+    >
+        <div 
+            x-show="showModal" 
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            class="bg-white rounded-2xl p-8 md:p-12 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            @click.stop
+        >
+            <div class="flex text-amber-500 mb-6">
+                <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                <i data-lucide="star" class="h-5 w-5 fill-current"></i>
+                <i data-lucide="star" class="h-5 w-5 fill-current"></i>
             </div>
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card p-6 rounded-xl flex flex-col justify-between min-h-[300px] bg-white shadow-lg hover:shadow-xl transition-shadow">
-                <div>
-                    <div class="flex text-amber-500 mb-4">
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                    </div>
-                    <p class="text-stone-600 italic leading-relaxed mb-6 text-sm">
-                        "In a world that is built around, mostly caters and centres whiteness, it’s rare to find someone who I could talk to about race, power dynamics... Her deep understanding of how race and ethnicity shape experiences allows for honest, validating..."
-                    </p>
-                </div>
-                <span class="text-xs uppercase tracking-widest font-bold text-stone-400 self-end">— Anonymous Client</span>
-            </div>
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card p-6 rounded-xl flex flex-col justify-between min-h-[300px] bg-white shadow-lg hover:shadow-xl transition-shadow">
-                <div>
-                    <div class="flex text-amber-500 mb-4">
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                    </div>
-                    <p class="text-stone-600 italic leading-relaxed mb-6 text-sm">
-                        "Simangaliso uses a deeply informed decolonised lens, drawing on her extensive experience with multicultural communities... She has reminded me that I am not alone in these systems..."
-                    </p>
-                </div>
-                <span class="text-xs uppercase tracking-widest font-bold text-stone-400 self-end">— Anonymous Client</span>
-            </div>
-            <!-- Testimonial 4 -->
-            <div class="testimonial-card p-6 rounded-xl flex flex-col justify-between min-h-[300px] bg-white shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1">
-                <div>
-                    <div class="flex text-amber-500 mb-4">
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                    </div>
-                    <p class="text-stone-600 italic leading-relaxed mb-6 text-sm">
-                        "Simangaliso is a trailblazer; she is paving the road for the future of multicultural social workers... Whether you want to challenge your own perspectives, deepen your understanding..."
-                    </p>
-                </div>
-                <span class="text-xs uppercase tracking-widest font-bold text-stone-400 self-end">— Anonymous Client</span>
-            </div>
+            <p x-text="testimonials[selectedIndex].fullQuote" class="text-stone-600 italic leading-relaxed mb-8 text-lg"></p>
+            <span class="text-sm uppercase tracking-widest font-bold text-stone-400 block text-right">— Anonymous Client</span>
         </div>
     </div>
 </section>
+   
 
 
 <!-- GIVING BACK -->
@@ -872,6 +882,38 @@ window.addEventListener('scroll', () => {
     const progress = Math.min((scrollTop / docHeight) * 100, 100);
     document.getElementById('scroll-progress').style.width = progress + '%';
 });
+
+//Testimonials
+        function testimonials() {
+    return {
+        testimonials: [
+            {
+                quote: "Working with Simangaliso as my supervisor has been an incredibly enriching... felt truly seen, heard and supported.",
+                fullQuote: "Working with Simangaliso as my supervisor has been an incredibly enriching and transformative experience. From our very first session, I felt truly seen, heard and supported. Simangaliso brings an empathetic, kind, and calm presence, creating a truly safe and warm space where supervisor and supervisee power dynamics are balanced, meaning that I could bring my whole authentic self. She has a way with words that makes you feel comfortable, safe and validated but at the same time she is able to lead with curiosity to help you reflect on your unconscious belief systems that could be holding you back and uncovering the ways internalised systems of power can shape how we show up in our mind, work and in the world."
+            },
+            {
+                quote: "In a world that is built around, mostly caters and centres whiteness, it’s rare... power dynamics and white supremacy.",
+                fullQuote: "In a world that is built around, mostly caters and centres whiteness, it’s rare to find someone who I could talk to about race, power dynamics and how to navigate systems that are not made for people of colour without some discomfort. Simangaliso creates a rare and safe space for non-white practitioners to openly discuss whiteness, power dynamics and white supremacy, which are topics that are often unsafe or uncomfortable to explore in general but mostly in professional contexts. Her deep understanding of how race and ethnicity shape experiences allows for honest, validating, and ultimately liberating conversations. These conversations are insightful, important, and extremely powerful, as there are not many spaces where these can happen, thus it’s detrimental for people of colour to have at least one space where they can feel genuinely seen, heard and supported."
+            },
+            {
+                quote: "Simangaliso uses a deeply informed decolonised lens... reminded me that I am not alone.",
+                fullQuote: "Simangaliso uses a deeply informed decolonised lens, drawing on her extensive experience with multicultural communities and her ability to see the interconnectedness of systemic power, race, and language. She offered practical, holistic skills alongside thoughtful reflection, which helped me embed a decolonised practice into my work in a world that often does not value or recognise it. She has reminded me that I am not alone in these systems and has continually reinforced the importance and possibility of working in ways that centre a decolonial way of being."
+            },
+            {
+                quote: "Simangaliso is a trailblazer; she is paving the road... cheering for your success.",
+                fullQuote: "Simangaliso is a trailblazer; she is paving the road for the future of multicultural social workers and young people. She has a wealth of knowledge and she would add an immense amount of value to anyone who she supervises, but especially people of colour. Anyone who has the opportunity to be supervised by her will benefit from her abundance of knowledge, her ability to decolonise thinking and practice, and her innovative approach to social work with multicultural communities. Whether you want to challenge your own perspectives, deepen your understanding of systemic power, or make meaningful change in the lives of multicultural people, Simangaliso’s supervision will enrich both your professional journey and your personal growth while making you feel like you genuinely have someone cheering for your success."
+            }
+            // Add more objects here for 10+ testimonials
+        ],
+        showModal: false,
+        selectedIndex: 0,
+        openModal(index) {
+            this.selectedIndex = index;
+            this.showModal = true;
+            document.body.style.overflow = 'hidden'; // Prevent body scroll
+        }
+    }
+}
 </script>
 
 </body>
