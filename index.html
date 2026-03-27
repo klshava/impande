@@ -106,10 +106,11 @@
             margin: 0 auto;
         }
 
-        .swiper {
+      .swiper {
             width: 100%;
-            padding: 0;
+            padding: 20px 0 60px;
         }
+    
 
         .swiper-slide {
             display: flex;
@@ -130,12 +131,13 @@
             padding: 3rem 2.5rem;
             box-shadow: 0 10px 30px -5px rgba(27, 43, 35, 0.06);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            min-height: 500px;
+            min-height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
             overflow: hidden;
+            width: 100%;
         }
 
         .testimonial-card::before {
@@ -217,7 +219,7 @@
             align-items: center;
             justify-content: center;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
 
         .swiper-button-prev,
@@ -260,11 +262,11 @@
 
         /* Pagination dots */
         .swiper-pagination {
-            position: static;
+            position: absolute;
+            bottom: 0 !important;
             display: flex;
             justify-content: center;
             gap: 0.5rem;
-            margin-top: 2rem;
         }
 
         .swiper-pagination-bullet {
@@ -280,6 +282,33 @@
             background: var(--deep-green);
             width: 24px;
             border-radius: 4px;
+        }
+
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.4s ease-in-out;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+        }
+        /* Custom underline */
+        .link-underline {
+            position: relative;
+        }
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--earth-brown);
+            transition: width 0.3s ease;
+        }
+        .link-underline:hover::after {
+            width: 100%;
         }
 
         /* Responsive */
@@ -748,11 +777,11 @@
                             <div class="testimonial-card">
                                 <div>
                                     <div class="testimonial-stars">
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
                                     </div>
                                     <p class="testimonial-text">
                                         "Working with Simangaliso as my supervisor has been an incredibly enriching and transformative experience. From our very first session, I felt truly seen, heard and supported. Simangaliso brings an empathetic, kind, and calm presence, creating a truly safe and warm space where supervisor and supervisee power dynamics are balanced, meaning that I could bring my whole authentic self. She has a way with words that makes you feel comfortable, safe and validated but at the same time she is able to lead with curiosity to help you reflect on your unconscious belief systems that could be holding you back."
@@ -773,11 +802,11 @@
                             <div class="testimonial-card">
                                 <div>
                                     <div class="testimonial-stars">
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                                        <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
+                                        <i data-lucide="star" class="h-4 w-4 fill-current text-amber-500"></i>
                                     </div>
                                     <p class="testimonial-text">
                                         "In a world that is built around, mostly caters and centres whiteness, it's rare to find someone who I could talk to about race, power dynamics and how to navigate systems that are not made for people of colour without some discomfort. Simangaliso creates a rare and safe space for non-white practitioners to openly discuss whiteness, power dynamics and white supremacy, which are topics that are often unsafe or uncomfortable to explore in general but mostly in professional contexts. Her deep understanding of how race and ethnicity shape experiences allows for honest, validating, and ultimately liberating conversations."
