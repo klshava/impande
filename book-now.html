@@ -34,6 +34,7 @@
                 <a href="support.html" class="link-underline">Support</a>
                 <a href="root.html" class="link-underline">The Root</a>
                 <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="insights.html" class="link-underline">Insights</a>
                 <a href="giving-back.html" class="link-underline">Giving Back</a>
                 <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
             </nav>
@@ -50,6 +51,7 @@
         <a href="support.html">Support</a>
         <a href="root.html">The Root</a>
         <a href="seed.html">The Seed</a>
+        <a href="insights.html" class="link-underline">Insights</a>
         <a href="giving-back.html">Giving Back</a>
         <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
     </div>
@@ -114,9 +116,24 @@
                         <div class="calendar-button-wrapper">
                             <div class="calendar-button-container">
                                 <!-- The script will render the button here -->
-                                <button class="calendar-scheduling-button" onclick="alert('Google Calendar Integration: In a live environment, the scheduling button script would render here.')">
-                                    Book via Google Calendar
-                                </button>
+                                <!-- Google Calendar Appointment Scheduling begin -->
+<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+(function() {
+  var target = document.currentScript;
+  window.addEventListener('load', function() {
+    calendar.schedulingButton.load({
+      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0iCdao7xKkdetZWgIXmMbOfXfHzNd2Kf9sf-mCJ6d2S8GCdon5oSINjZpq1TXyG0R_rwW5gpJ8?gv=true',
+      color: '#039BE5',
+      label: 'Book an appointment',
+      target,
+    });
+  });
+})();
+</script>
+<!-- end Google Calendar Appointment Scheduling -->
+ 
                             </div>
                         </div>
                     </div>

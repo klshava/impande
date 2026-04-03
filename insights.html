@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Reflections | iMpande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="root-bg">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
+        <div class="container mx-auto px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-4 group">
+                <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
+                <a href="index.html" class="link-underline">Home</a>
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Support</a>
+                <a href="root.html" class="link-underline">The Root</a>
+                <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="insights.html" class="link-underline text-green-900">Insights</a>
+                <a href="giving-back.html" class="link-underline">Giving Back</a>
+                <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
+            </nav>
+            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+        <a href="index.html">Home</a>
+        <a href="essence.html">My Essence</a>
+        <a href="support.html">Support</a>
+        <a href="root.html">The Root</a>
+        <a href="seed.html">The Seed</a>
+        <a href="insights.html">Insights</a>
+        <a href="giving-back.html">Giving Back</a>
+        <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
+    </div>
+
+    <!-- INSIGHTS HERO -->
+    <section class="section-padding pt-48 bg-warm">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Rooted Reflections</h4>
+                <h1 class="text-green-950 serif mb-10">Insights & <span class="italic">Wisdom</span></h1>
+                <p class="text-stone-600 text-xl leading-relaxed">
+                    Join me every other week for bite-sized insights on healing, growth, cultural responsiveness, and decolonial practice.
+                </p>
+            </div>
+        </div>
+    </section>
+
+<!-- VIDEO CAROUSEL SECTION -->
+<section class="section-padding">
+    <div class="container mx-auto px-8">
+        <div class="relative max-w-6xl mx-auto reveal">
+            <!-- Navigation Arrows -->
+            <div class="absolute -left-16 top-1/2 -translate-y-1/2 hidden xl:block">
+                <button id="prevVideo" class="w-12 h-12 bg-white border border-stone-100 rounded-full shadow-lg flex items-center justify-center hover:bg-green-900 hover:text-white transition-all">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+            </div>
+            <div class="absolute -right-16 top-1/2 -translate-y-1/2 hidden xl:block">
+                <button id="nextVideo" class="w-12 h-12 bg-white border border-stone-100 rounded-full shadow-lg flex items-center justify-center hover:bg-green-900 hover:text-white transition-all">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="overflow-hidden rounded-[3rem] shadow-2xl bg-white border border-stone-100">
+                <div id="videoCarousel" class="flex transition-transform duration-700 ease-in-out">
+                    
+                                        <!-- Video 1 -->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <!-- Portrait Video -->
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/mentorship.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <!-- Text -->
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 01</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Mentorship, coaching and sponsorship</h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+                                  Mentorship without sponsorship can leave skilled and deserving minoritised employees stuck proving themselves without gaining access to opportunities. Sponsorship can open doors, but when it is primarily offered by people already in positions of dominance, it can reproduce the very hierarchies that the workplace claims to challenge.
+
+True equity happens at the intersection of mentorship, sponsorship, and structural change. It’s not enough to guide and prepare workers ,we must also redistribute power, confront bias, and create opportunities that don’t depend on permission from those who historically controlled access.
+
+Mentorship prepares you. Sponsorship positions you. Equity demands we shift who controls the door
+                                </p>
+                                <div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Video 2-->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <!-- Portrait Video -->
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/supervision.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <!-- Text -->
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 02</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Supervision</h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+                                    Ever wondered if the invisible labour we carry in professional spaces gets recognised in supervision?
+                                </p>
+                                <div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/code.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 03</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Code Switching </h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+                                    Code switching
+Self editing
+This is labour
+                                </p>
+                                <div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/hiring.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 04</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Hiring </h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+                                    Hiring isn’t neutral. Names, accents, confidence all signal who belongs. I only returned to my full name, Simangaliso, when I could finally do so safely.
+                                </p>
+                                <div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Video 5 -->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/DecolonialPractice.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 05</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Decolonial Practice </h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+                                    time for us to talk about the importance of a decolonial lens .
+
+Without a decolonial lens, cultural responsiveness can become polish not repair.
+
+Practice may feel more inclusive while the structure stays the same.
+
+Refinement builds trust.
+Redesign builds accountability.
+
+We need both ,so systems don’t just welcome people, but evolve with them. </p>
+                                <div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Video 6 -->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/compliance.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 06</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Compliance </h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+First contact is relational . Let’s talk about our intake processes and the “other “ category that we see on our intake forms instead of self description options. See you next week . </p>
+                                <div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                                          <!-- Video 7 -->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/Permission.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 07</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Permission To Therapy In Language </h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+
+Permission to therapy in language or rather structural permission to therapy in language :Lessons from a multilingual therapist . My social work and counselling training were both in Australia . I have mainly provided therapy in English even for clients from Zimbabwe 🇿🇼. It’s not until I started my own practice and mainly last year that I was able to offer clients the choice of therapy in language . I speak multiple languages but offered therapy in isiNdebele , Shona and English . I was stretched , I had a lot to unlearn . Here is what I observed                               
+<div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <!-- Video 8 -->
+                    <div class="min-w-full p-12 lg:p-20">
+                        <div class="flex flex-col lg:flex-row gap-16 items-start lg:items-center">
+                            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
+                                <video controls class="w-full h-full object-cover rounded-2xl">
+                                    <source src="assets/videos/Permission.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="w-full lg:w-2/3">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Reflection 08</span>
+                                <h3 class="serif text-3xl text-green-950 mb-6 leading-tight">Trauma Informed Work </h3>
+                                <p class="text-stone-500 leading-relaxed mb-8">
+
+True trauma-informed work must centre lived experience, challenge power, and honour culture
+
+<div class="w-12 h-[1px] bg-green-900/20"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Indicators -->
+            <div class="flex justify-center space-x-3 mt-10 xl:hidden">
+                <button class="w-3 h-3 rounded-full bg-green-900 transition-all carousel-dot" data-index="0"></button>
+                <button class="w-3 h-3 rounded-full bg-stone-200 transition-all carousel-dot" data-index="1"></button>
+                <button class="w-3 h-3 rounded-full bg-stone-200 transition-all carousel-dot" data-index="2"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm pt-24 pb-12">
+        <div class="container mx-auto px-8">
+            <div class="pt-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                <span>&copy; <span id="year"></span> iMpande. All rights reserved.</span>
+                <span class="mt-4 md:mt-0">Sovereignty was never ceded. This was, is and will always be Aboriginal land.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Carousel Logic
+        const carousel = document.getElementById('videoCarousel');
+        const nextBtn = document.getElementById('nextVideo');
+        const prevBtn = document.getElementById('prevVideo');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentIndex = 0;
+        const totalSlides = 8;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('bg-green-900', idx === currentIndex);
+                dot.classList.toggle('bg-stone-200', idx !== currentIndex);
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.getAttribute('data-index'));
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+</html>
