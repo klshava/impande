@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | iMpande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="root-bg">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
+        <div class="container mx-auto px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-4 group">
+                <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
+                <a href="index.html" class="link-underline">Home</a>
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Support</a>
+                <a href="root.html" class="link-underline">The Root</a>
+                <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="giving-back.html" class="link-underline text-green-900">Giving Back</a>
+                <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
+            </nav>
+            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+        <a href="index.html">Home</a>
+        <a href="essence.html">My Essence</a>
+        <a href="support.html">Support</a>
+        <a href="root.html">The Root</a>
+        <a href="seed.html">The Seed</a>
+        <a href="giving-back.html">Giving Back</a>
+        <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
+    </div>
+
+    <!-- T&Cs CONTENT -->
+    <section class="section-padding pt-48 bg-warm">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Professional Standards</h4>
+                <h1 class="text-green-950 serif mb-10">Terms & <span class="italic">Conditions</span></h1>
+                <p class="text-stone-600 text-xl leading-relaxed">
+                    Our commitment to ethical practice and professional accountability.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto prose prose-stone text-stone-600 space-y-10">
+                
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">1. Services Provided</h3>
+                    <p>iMpande offers professional therapy services, intended to support clients through personalized consultation. Services are delivered in accordance with the highest professional standards and tailored to individual client needs.</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">2. Appointment Policies</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li><strong>Booking:</strong> Appointments must be scheduled in advance through our booking system or contact form.</li>
+                        <li><strong>Cancellations:</strong> If you need to cancel or reschedule an appointment, please notify us at least 24 hours in advance. Failure to cancel within this timeframe may result in a cancellation fee.</li>
+                        <li><strong>Punctuality:</strong> Clients are encouraged to arrive on time. Sessions will end as scheduled to accommodate the needs of subsequent clients.</li>
+                    </ul>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">3. Confidentiality</h3>
+                    <p>Confidentiality is paramount in our therapy services. Information disclosed in sessions is treated with the utmost respect and discretion. However, confidentiality may be breached under the legal obligations to report when there is a risk of harm to the client or others, as required by Victorian law.</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">4. Payment Terms</h3>
+                    <p>Payment for services is due at the time of service unless other arrangements have been made in advance. We accept payment via direct deposit.</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">5. Intellectual Property</h3>
+                    <p>All materials provided during therapy sessions, including worksheets, informational documents, and digital content, are proprietary and may not be shared, copied, or reproduced without explicit permission.</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">6. Limitation of Liability</h3>
+                    <p>iMpande is committed to providing high-quality services. However, clients acknowledge that the outcomes of any therapy session are not guaranteed. iMpande will not be liable for any direct or indirect damages that arise from the use of its services.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm pt-24 pb-12">
+        <div class="container mx-auto px-8">
+            <div class="pt-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                <span>&copy; <span id="year"></span> iMpande. All rights reserved.</span>
+                <span class="mt-4 md:mt-0">Sovereignty was never ceded. This was, is and will always be Aboriginal land.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

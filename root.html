@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Root | iMpande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="root-bg">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
+        <div class="container mx-auto px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-4 group">
+                <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
+                <a href="index.html" class="link-underline">Home</a>
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Support</a>
+                <a href="root.html" class="link-underline text-green-900">The Root</a>
+                <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="giving-back.html" class="link-underline">Giving Back</a>
+                <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
+            </nav>
+            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+        <a href="index.html">Home</a>
+        <a href="essence.html">My Essence</a>
+        <a href="support.html">Support</a>
+        <a href="root.html">The Root</a>
+        <a href="seed.html">The Seed</a>
+        <a href="giving-back.html">Giving Back</a>
+        <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
+    </div>
+
+    <!-- THE ROOT CONTENT -->
+    <section class="section-padding pt-48 bg-dark">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h4 class="text-xs text-soft-cream/60 mb-6 uppercase tracking-widest">Depth & Foundation</h4>
+                <h1 class="text-soft-cream serif mb-10">The <span class="italic">Root</span></h1>
+                <p class="text-soft-cream/80 text-xl leading-relaxed italic mb-12">
+                    "To understand the tree, one must first respect the root."
+                </p>
+                <div class="w-24 h-[1px] bg-muted-gold mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <h2 class="serif text-green-950 mb-10">Reaching the <span class="italic">Unseen</span></h2>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                        In this space, we acknowledge that your current struggles are often the visible branches of much deeper, unseen roots. Trauma and culturally informed approaches are where healing begins—with the "Why".
+                    </p>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                        We shift the narrative from "what is wrong with you" to "what happened to you," understanding the profound context of systemic power, race, and history that shapes our present reality.
+                    </p>
+                    <div class="p-8 bg-warm rounded-3xl border border-green-900/5">
+                        <h3 class="serif text-xl text-green-950 mb-4">The Work of Depth</h3>
+                        <p class="text-stone-500 text-sm italic">"Healing requires us to go deep, to look beneath the surface of our behaviors and emotions to find the anchors of our identity."</p>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="aspect-square bg-warm rounded-[4rem] flex items-center justify-center p-20 shadow-inner">
+                        <i data-lucide="mountain" class="w-full h-full text-green-900/10"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm pt-24 pb-12">
+        <div class="container mx-auto px-8">
+            <div class="pt-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                <span>&copy; <span id="year"></span> iMpande. All rights reserved.</span>
+                <span class="mt-4 md:mt-0">Sovereignty was never ceded. This was, is and will always be Aboriginal land.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

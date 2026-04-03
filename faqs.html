@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | iMpande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="root-bg">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
+        <div class="container mx-auto px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-4 group">
+                <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
+                <a href="index.html" class="link-underline">Home</a>
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Support</a>
+                <a href="root.html" class="link-underline">The Root</a>
+                <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="giving-back.html" class="link-underline">Giving Back</a>
+                <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
+            </nav>
+            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+        <a href="index.html">Home</a>
+        <a href="essence.html">My Essence</a>
+        <a href="support.html">Support</a>
+        <a href="root.html">The Root</a>
+        <a href="seed.html">The Seed</a>
+        <a href="giving-back.html">Giving Back</a>
+        <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
+    </div>
+
+    <!-- FAQs CONTENT -->
+    <section class="section-padding pt-48 bg-warm">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Clarity & Guidance</h4>
+                <h1 class="text-green-950 serif mb-10">Frequently Asked <span class="italic">Questions</span></h1>
+                <p class="text-stone-600 text-xl leading-relaxed">
+                    Finding the right path for your healing journey starts with clarity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto space-y-12">
+                
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">What types of therapy do you offer?</h3>
+                    <p class="text-stone-600 leading-relaxed">At iMpande, we provide both phone consultations and telehealth services. We specialize in culturally responsive therapy tailored to your unique needs.</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">What is the cost of therapy?</h3>
+                    <p class="text-stone-600 leading-relaxed">The cost of our services varies depending on your needs. Individual therapy is priced based on duration. Costs will be discussed during your initial free 30-minute consultation. Please note that we currently do not offer a Medicare rebate.</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">What are your qualifications?</h3>
+                    <p class="text-stone-600 leading-relaxed">I am a qualified social worker and counselor with 16 years of experience. I hold both a Masters and a Bachelor of Social Work and am an accredited member of the Australian Association of Social Workers (AASW).</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">What is the difference between counseling and therapy?</h3>
+                    <p class="text-stone-600 leading-relaxed">While often used interchangeably, counseling generally addresses specific issues over a shorter period, while therapy explores deeper, long-standing patterns. At iMpande, we offer both and tailor our approach to you.</p>
+                </div>
+
+                <div class="reveal">
+                    <h3 class="serif text-2xl text-green-950 mb-4">How will I benefit from therapy?</h3>
+                    <p class="text-stone-600 leading-relaxed">Therapy can help you manage uncomfortable emotions, navigate life transitions, move past trauma, and improve interpersonal relationships. A good match between therapist and client is the most significant predictor of success.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm pt-24 pb-12">
+        <div class="container mx-auto px-8">
+            <div class="pt-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                <span>&copy; <span id="year"></span> iMpande. All rights reserved.</span>
+                <span class="mt-4 md:mt-0">Sovereignty was never ceded. This was, is and will always be Aboriginal land.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

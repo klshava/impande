@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now | iMpande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Calendar CDN -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async defer></script>
+</head>
+<body class="root-bg">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
+        <div class="container mx-auto px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-4 group">
+                <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
+                <a href="index.html" class="link-underline">Home</a>
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Support</a>
+                <a href="root.html" class="link-underline">The Root</a>
+                <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="giving-back.html" class="link-underline">Giving Back</a>
+                <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
+            </nav>
+            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+        <a href="index.html">Home</a>
+        <a href="essence.html">My Essence</a>
+        <a href="support.html">Support</a>
+        <a href="root.html">The Root</a>
+        <a href="seed.html">The Seed</a>
+        <a href="giving-back.html">Giving Back</a>
+        <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
+    </div>
+
+    <!-- BOOK NOW HERO -->
+    <section class="section-padding pt-48 bg-warm">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Begin Your Journey</h4>
+                <h1 class="text-green-950 serif mb-10">Schedule Your <span class="italic">Session</span></h1>
+                <p class="text-stone-600 text-xl leading-relaxed">
+                    Take the first step toward healing with a free 30-minute initial call or book a professional session directly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING INTERFACE -->
+    <section class="section-padding">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+                
+                <!-- Contact Form -->
+                <div class="reveal">
+                    <h2 class="serif text-green-950 mb-10">Send an Enquiry</h2>
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Full Name</label>
+                                <input type="text" class="input-premium" placeholder="Your name" required>
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Email Address</label>
+                                <input type="email" class="input-premium" placeholder="email@address.com" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Service of Interest</label>
+                            <select class="input-premium appearance-none">
+                                <option>Individual Therapy</option>
+                                <option>Professional Supervision</option>
+                                <option>Workshops & Training</option>
+                                <option>Speaking Engagement</option>
+                                <option>Free 30-min Initial Call</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Your Message</label>
+                            <textarea class="input-premium h-40" placeholder="Tell us a little bit about what you're looking for..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-premium w-full py-6 text-sm">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Booking Info & Calendar -->
+                <div class="reveal space-y-16">
+                    <div>
+                        <h2 class="serif text-green-950 mb-10">Online Booking</h2>
+                        <p class="text-stone-600 mb-10">Book your session instantly through our integrated calendar. This will also help generate your invoice automatically.</p>
+                        
+                        <!-- Google Calendar Button Placeholder -->
+                        <div class="calendar-button-wrapper">
+                            <div class="calendar-button-container">
+                                <!-- The script will render the button here -->
+                                <button class="calendar-scheduling-button" onclick="alert('Google Calendar Integration: In a live environment, the scheduling button script would render here.')">
+                                    Book via Google Calendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-stone-100 pt-16">
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-green-900 mb-4">Contact</h4>
+                            <p class="text-stone-500 text-sm">+61 422 060 968<br>asourceofhealing@impande.com.au</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-widest text-green-900 mb-4">Hours</h4>
+                            <p class="text-stone-500 text-sm">Thurs - Fri: 9am - 5pm<br>Sat: 9am - 12pm</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm pt-24 pb-12">
+        <div class="container mx-auto px-8">
+            <div class="pt-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                <span>&copy; <span id="year"></span> iMpande. All rights reserved.</span>
+                <span class="mt-4 md:mt-0">Sovereignty was never ceded. This was, is and will always be Aboriginal land.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Seed | iMpande</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="root-bg">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
+        <div class="container mx-auto px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-4 group">
+                <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
+                <a href="index.html" class="link-underline">Home</a>
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Support</a>
+                <a href="root.html" class="link-underline">The Root</a>
+                <a href="seed.html" class="link-underline text-green-900">The Seed</a>
+                <a href="giving-back.html" class="link-underline">Giving Back</a>
+                <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
+            </nav>
+            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+        <a href="index.html">Home</a>
+        <a href="essence.html">My Essence</a>
+        <a href="support.html">Support</a>
+        <a href="root.html">The Root</a>
+        <a href="seed.html">The Seed</a>
+        <a href="giving-back.html">Giving Back</a>
+        <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
+    </div>
+
+    <!-- THE SEED CONTENT -->
+    <section class="section-padding pt-48 bg-warm">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Growth & Potential</h4>
+                <h1 class="text-green-950 serif mb-10">The <span class="italic">Seed</span></h1>
+                <p class="text-stone-600 text-xl leading-relaxed italic mb-12">
+                    "Every ending in 'The Root' is a beginning in 'The Seed.'"
+                </p>
+                <div class="w-24 h-[1px] bg-muted-gold mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal relative order-2 lg:order-1">
+                    <div class="aspect-square bg-white rounded-full flex items-center justify-center p-20 shadow-xl border border-green-900/5">
+                        <i data-lucide="sprout" class="w-full h-full text-green-900 animate-pulse"></i>
+                    </div>
+                </div>
+                <div class="reveal order-1 lg:order-2">
+                    <h2 class="serif text-green-950 mb-10">The Blueprint of <span class="italic">Growth</span></h2>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                        Inside every seed is the entire map of what it can become. Our work is to provide the environment (the "nurturing space") required for that seed to crack open and flourish.
+                    </p>
+                    <div class="space-y-10">
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 rounded-full bg-warm flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="sun" class="w-6 h-6 text-green-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="serif text-xl text-green-950 mb-3">Nurturing Environment</h3>
+                                <p class="text-stone-500 text-sm">Creating the specific conditions you need to thrive and grow.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-6">
+                            <div class="w-12 h-12 rounded-full bg-warm flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-green-900"></i>
+                            </div>
+                            <div>
+                                <h3 class="serif text-xl text-green-950 mb-3">Resilience as Practice</h3>
+                                <p class="text-stone-500 text-sm">Growth isn't always linear. We celebrate the quiet strength of "becoming"—helping you write new chapters of your story where you are the primary author.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm pt-24 pb-12">
+        <div class="container mx-auto px-8">
+            <div class="pt-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                <span>&copy; <span id="year"></span> iMpande. All rights reserved.</span>
+                <span class="mt-4 md:mt-0">Sovereignty was never ceded. This was, is and will always be Aboriginal land.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
