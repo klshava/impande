@@ -12,10 +12,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Google Calendar CDN -->
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async defer></script>
+    <style>
+        .halaxy-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .halaxy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+        .iframe-container {
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+        }
+    </style>
 </head>
 <body class="root-bg">
 
@@ -65,93 +81,65 @@
                 <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Begin Your Journey</h4>
                 <h1 class="text-green-950 serif mb-10">Schedule Your <span class="italic">Session</span></h1>
                 <p class="text-stone-600 text-xl leading-relaxed">
-                    Take the first step toward healing with a free 30-minute initial call or book a professional session directly.
+                    Reserve your space for healing and growth. Choose a time that works for you through our secure booking portal.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- BOOKING INTERFACE -->
-    <section class="section-padding">
+    <section class="section-padding -mt-12">
         <div class="container mx-auto px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+            <div class="max-w-5xl mx-auto">
                 
-                <!-- Contact Form -->
-                <div class="reveal">
-                    <h2 class="serif text-green-950 mb-10">Send an Enquiry</h2>
-                    <form id="contact-form" class="space-y-8">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div>
-                                <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Full Name</label>
-                                <input type="text" class="input-premium" placeholder="Your name" required>
-                            </div>
-                            <div>
-                                <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Email Address</label>
-                                <input type="email" class="input-premium" placeholder="email@address.com" required>
-                            </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    
+                    <!-- Left Side: Info & External Link -->
+                    <div class="lg:col-span-1 space-y-8">
+                        <div class="halaxy-card p-8 reveal">
+                            <h3 class="serif text-2xl text-green-950 mb-6">Online Portal</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-8">
+                                For a seamless experience, you can also visit our practitioner profile directly on Halaxy to manage your appointments and invoices.
+                            </p>
+                            <a href="https://www.halaxy.com/book/social-worker/simangaliso-nyoni/1778085/1360365" class="inline-block group">
+                                <img src="https://cdn.halaxy.com/h/images/logo.png" alt="Book via Halaxy" class="h-10 opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <span class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 block">Visit Profile →</span>
+                            </a>
                         </div>
-                        <div>
-                            <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Service of Interest</label>
-                            <select class="input-premium appearance-none">
-                                <option>Individual Therapy</option>
-                                <option>Professional Supervision</option>
-                                <option>Workshops & Training</option>
-                                <option>Speaking Engagement</option>
-                                <option>Free 30-min Initial Call</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-3 block">Your Message</label>
-                            <textarea class="input-premium h-40" placeholder="Tell us a little bit about what you're looking for..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-premium w-full py-6 text-sm">Send Message</button>
-                    </form>
-                </div>
 
-                <!-- Booking Info & Calendar -->
-                <div class="reveal space-y-16">
-                    <div>
-                        <h2 class="serif text-green-950 mb-10">Online Booking</h2>
-                        <p class="text-stone-600 mb-10">Book your session instantly through our integrated calendar. This will also help generate your invoice automatically.</p>
-                        
-                        <!-- Google Calendar Button Placeholder -->
-                        <div class="calendar-button-wrapper">
-                            <div class="calendar-button-container">
-                                <!-- The script will render the button here -->
-                                <!-- Google Calendar Appointment Scheduling begin -->
-<link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-<script>
-(function() {
-  var target = document.currentScript;
-  window.addEventListener('load', function() {
-    calendar.schedulingButton.load({
-      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0iCdao7xKkdetZWgIXmMbOfXfHzNd2Kf9sf-mCJ6d2S8GCdon5oSINjZpq1TXyG0R_rwW5gpJ8?gv=true',
-      color: '#039BE5',
-      label: 'Book an appointment',
-      target,
-    });
-  });
-})();
-</script>
-<!-- end Google Calendar Appointment Scheduling -->
- 
+                        <div class="grid grid-cols-1 gap-8 border-t border-stone-100 pt-8 reveal">
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-widest text-green-900 mb-3">Contact</h4>
+                                <p class="text-stone-500 text-sm">+61 422 060 968<br>asourceofhealing@impande.com.au</p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold uppercase tracking-widest text-green-900 mb-3">Hours</h4>
+                                <p class="text-stone-500 text-sm">Thurs - Fri: 9am - 5pm<br>Sat: 9am - 12pm</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-stone-100 pt-16">
-                        <div>
-                            <h4 class="text-xs font-bold uppercase tracking-widest text-green-900 mb-4">Contact</h4>
-                            <p class="text-stone-500 text-sm">+61 422 060 968<br>asourceofhealing@impande.com.au</p>
-                        </div>
-                        <div>
-                            <h4 class="text-xs font-bold uppercase tracking-widest text-green-900 mb-4">Hours</h4>
-                            <p class="text-stone-500 text-sm">Thurs - Fri: 9am - 5pm<br>Sat: 9am - 12pm</p>
+                    <!-- Right Side: The Booking Form -->
+                    <div class="lg:col-span-2 reveal">
+                        <div class="halaxy-card p-4 md:p-8">
+                            <div class="flex items-center justify-between mb-8 px-4">
+                                <h2 class="serif text-2xl text-green-950">Practitioner Booking</h2>
+                                <span class="text-[10px] uppercase tracking-widest text-stone-400">Simangaliso Nyoni</span>
+                            </div>
+                            <div class="iframe-container shadow-inner" style="position: relative; width: 100%; height: 750px;">
+                                <iframe 
+                                    src="https://www.halaxy.com/book/widget/social-worker/simangaliso-nyoni/1778085/1360365" 
+                                    allow="payment" 
+                                    style="border:0; width:100%; height:100%; display:block;">
+                                </iframe>
+                            </div>
+                            <p class="text-center text-[10px] text-stone-400 mt-6 uppercase tracking-[0.2em]">
+                                Secure & Encrypted Booking via Halaxy
+                            </p>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </section>
@@ -166,6 +154,47 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Simple Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => {
+            reveal.style.opacity = '0';
+            reveal.style.transform = 'translateY(30px)';
+            reveal.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(reveal);
+        });
+    </script>
 </body>
 </html>
