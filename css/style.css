@@ -32,15 +32,15 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, .serif {
+body h1, body h2, body h3, body h4, .serif {
     font-family: 'Crimson Pro', serif;
     font-weight: 400;
 }
 
-/* Typography Scale */
-h1 { font-size: clamp(3.5rem, 8vw, 7rem); line-height: 0.95; }
-h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; }
-h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+/* Typography Scale (body-prefixed so Tailwind's CDN preflight can't flatten headings to 16px) */
+body h1 { font-size: clamp(3.5rem, 8vw, 7rem); line-height: 0.95; }
+body h2 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; }
+body h3 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
 .text-xs { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
 
 /* Premium Navigation */

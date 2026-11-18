@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="iMpande — Fees & Services. Culturally responsive therapy, supervision, and consultancy pricing.">
     <title>Pricing | iMpande | Healing that reaches the root.</title>
+    <link rel="icon" type="image/png" href="assets/images/logocircle.png">
 
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Modern Stack -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Custom Framework -->
+    <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Integrated Booking CDN -->
@@ -31,7 +32,7 @@
         <div class="container mx-auto px-8 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-4 group">
                 <div class="relative">
-                    <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409.png" alt="iMpande Logo" class="h-14 w-14 object-contain group-hover:rotate-12 transition-transform duration-700">
+                    <img src="assets/images/logocircle.png" alt="iMpande Logo" class="h-14 w-14 object-contain group-hover:rotate-12 transition-transform duration-700">
                 </div>
                 <div class="flex flex-col">
                     <span class="text-3xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
@@ -40,20 +41,20 @@
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
-                <a href="index.html" class="link-underline text-green-900">Home</a>
-                <a href="essence.html" class="link-underline text-green-900">My Essence</a>
-                <a href="support.html" class="link-underline text-green-900">Support</a>
-                <a href="root.html" class="link-underline text-green-900">The Root</a>
-                <a href="seed.html" class="link-underline text-green-900">The Seed</a>
-                <a href="insights.html" class="link-underline text-green-900">Insights</a>
-                <a href="giving-back.html" class="link-underline text-green-900">Giving Back</a>
-                <a href="pricing.html"  class="link-underline text-green-900">Pricing</a>
+            <nav class="hidden xl:flex items-center space-x-6 whitespace-nowrap text-[13px] font-medium uppercase tracking-widest">
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Services</a>
+                <a href="consultancy.html" class="link-underline">Consultancy</a>
+                <a href="root.html" class="link-underline">The Root</a>
+                <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="insights.html" class="link-underline">Insights</a>
+                <a href="giving-back.html" class="link-underline">Giving Back</a>
+                <a href="pricing.html"  class="link-underline">Pricing</a>
                 <a href="book-now.html" class="btn-premium px-8 py-3 text-xs">Book Now</a>
             </nav>
 
             <!-- Mobile Toggle -->
-            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+            <button id="menu-toggle" aria-label="Open menu" class="xl:hidden text-green-950 focus:outline-none">
                 <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
             </button>
         </div>
@@ -68,7 +69,8 @@
         <nav class="flex flex-col space-y-6 text-[13px] font-medium uppercase tracking-widest">
             <a href="index.html" class="text-green-900 hover:text-green-700">Home</a>
             <a href="essence.html" class="text-green-900 hover:text-green-700">My Essence</a>
-            <a href="support.html" class="text-green-900 hover:text-green-700">Support</a>
+            <a href="support.html" class="text-green-900 hover:text-green-700">Services</a>
+            <a href="consultancy.html" class="hover:text-green-700">Consultancy</a>
             <a href="root.html" class="text-green-900 hover:text-green-700">The Root</a>
             <a href="seed.html" class="text-green-900 hover:text-green-700">The Seed</a>
             <a href="insights.html" class="text-green-900 hover:text-green-700">Insights</a>
@@ -329,19 +331,21 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-16">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center space-x-4 mb-8">
-                        <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409.png" alt="iMpande Logo" class="h-12 w-12 brightness-0 invert opacity-80">
+                        <img src="assets/images/logocircle.png" alt="iMpande Logo" class="h-12 w-12 brightness-0 invert opacity-80">
                         <span class="text-2xl font-semibold text-white serif">iMpande</span>
                     </div>
                     <p class="text-lg leading-relaxed max-w-md mb-8">
-                        A dedicated space for women of color to heal through culturally responsive, decolonial practice.
+                        Consultancy, workshops and training, professional supervision, speaking engagements and culturally responsive therapeutic support.
                     </p>
                 </div>
                 
                 <div>
                     <h4 class="text-white uppercase tracking-widest text-xs font-bold mb-8">Explore</h4>
                     <ul class="space-y-4 text-sm">
-                        <li><a href="my-essence.html" class="hover:text-white transition-colors">My Essence</a></li>
-                        <li><a href="support.html" class="hover:text-white transition-colors">Support Services</a></li>
+                        <li><a href="essence.html" class="hover:text-white transition-colors">My Essence</a></li>
+                        <li><a href="support.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="consultancy.html" class="hover:text-white transition-colors">Consultancy</a></li>
+                        <li><a href="approach.html" class="hover:text-white transition-colors">Our Approach</a></li>
                         <li><a href="giving-back.html" class="hover:text-white transition-colors">Giving Back</a></li>
                         <li><a href="publications.html" class="hover:text-white transition-colors">Publications</a></li>
                     </ul>

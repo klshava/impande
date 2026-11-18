@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Services | iMpande</title>
+    <meta name="description" content="iMpande services: consultancy, workshops and training, professional supervision, speaking engagements, and therapy and counselling.">
+    <title>Services | iMpande</title>
+    <link rel="icon" type="image/png" href="assets/images/logocircle.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="root-bg">
@@ -19,15 +21,15 @@
     <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
         <div class="container mx-auto px-8 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-4 group">
-                <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <img src="assets/images/logocircle.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
                 <div class="flex flex-col">
                     <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
                 </div>
             </a>
-            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
-                <a href="index.html" class="link-underline">Home</a>
+            <nav class="hidden xl:flex items-center space-x-6 whitespace-nowrap text-[13px] font-medium uppercase tracking-widest">
                 <a href="essence.html" class="link-underline">My Essence</a>
-                <a href="support.html" class="link-underline text-green-900">Support</a>
+                <a href="support.html" class="link-underline">Services</a>
+                <a href="consultancy.html" class="link-underline">Consultancy</a>
                 <a href="root.html" class="link-underline">The Root</a>
                 <a href="seed.html" class="link-underline">The Seed</a>
                 <a href="insights.html" class="link-underline">Insights</a>
@@ -35,17 +37,18 @@
                 <a href="pricing.html"  class="link-underline">Pricing</a>
                 <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
             </nav>
-            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+            <button id="menu-toggle" aria-label="Open menu" class="xl:hidden text-green-950 focus:outline-none">
                 <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
             </button>
         </div>
     </header>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white xl:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
         <a href="index.html">Home</a>
         <a href="essence.html">My Essence</a>
-        <a href="support.html">Support</a>
+        <a href="support.html">Services</a>
+        <a href="consultancy.html">Consultancy</a>
         <a href="root.html">The Root</a>
         <a href="seed.html">The Seed</a>
         <a href="insights.html" class="link-underline">Insights</a>
@@ -54,14 +57,14 @@
         <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
     </div>
 
-    <!-- SUPPORT HERO -->
+    <!-- SERVICES HERO -->
     <section class="section-padding pt-48">
         <div class="container mx-auto px-8">
             <div class="text-center max-w-4xl mx-auto reveal">
                 <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">How We Walk Together</h4>
-                <h1 class="text-green-950 serif mb-10">Spaces for <span class="italic">Transformation</span></h1>
+                <h1 class="text-green-950 serif mb-10">Our <span class="italic">Services</span></h1>
                 <p class="text-stone-600 text-xl leading-relaxed">
-                    Our support services are built on the principles of social justice, cultural safety, and decolonial practice. We offer a range of pathways for individuals and organizations to engage in deep healing and growth.
+                    Our services are built on the principles of social justice, cultural safety, and decolonial practice. We offer a range of pathways for organisations, practitioners and individuals to strengthen culturally responsive, anti-oppressive practice and to heal and grow.
                 </p>
             </div>
         </div>
@@ -71,30 +74,70 @@
     <section class="pb-24">
         <div class="container mx-auto px-8">
             <div class="space-y-32">
-                
-                <!-- 1. Workshops & Training -->
-                <div id="workshops" class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center reveal">
-                    <div class="p-12 bg-warm rounded-[3rem]">
-                        <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-10 shadow-sm">
-                            <i data-lucide="users" class="w-10 h-10 text-green-900"></i>
+
+                <!-- 1. Consultancy (full width, no image) -->
+                <div id="consultancy" class="reveal p-10 md:p-14 bg-warm rounded-[3rem] grid grid-cols-1 lg:grid-cols-[22rem,1fr] gap-10 lg:gap-16 items-center">
+                    <div>
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                            <i data-lucide="compass" class="w-8 h-8 text-green-900"></i>
                         </div>
-                        <h2 class="serif text-green-950 mb-8">Workshops & Training</h2>
-                        <p class="text-stone-600 text-lg leading-relaxed mb-8">
-                            I provide workshops for social workers, counsellors, and organisations that foster culturally responsive practices. Through case studies and reflective activities, we explore anti-oppressive and social justice theories to create safer professional environments.
-                        </p>
-                        <div class="p-8 bg-white/50 border border-green-900/5 rounded-2xl italic text-stone-500 text-sm">
-                            "Simangaliso's approach to workshops is innovative and deeply challenging, pushing us to see beyond traditional Western frameworks."
-                        </div>
+                        <h2 class="serif text-green-950 text-5xl">Consultancy</h2>
                     </div>
-                    <div class="aspect-video bg-stone-100 rounded-[3rem] overflow-hidden">
-                        <img src="assets/images/2.png" alt="Workshops" class="w-full h-full object-cover object-top  grayscale opacity-80">
+                    <div>
+                        <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                            iMpande works alongside organisations to strengthen culturally responsive, anti-oppressive and decolonial practice across services, teams and systems. Consultancy may include practice consultation, review of policies and resources, strategic advice and collaborative development of practical recommendations.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="consultancy.html" class="btn-premium btn-outline px-8 py-4 text-xs uppercase tracking-widest">Learn More</a>
+                            <a href="mailto:asourceofhealing@impande.com.au?subject=Consultancy%20enquiry" class="btn-premium px-8 py-4 text-xs uppercase tracking-widest">Request a Consultation</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 2. Speaking Engagements -->
-                <div id="speaking" class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center reveal">
-                    <div class="order-2 lg:order-1 aspect-video bg-stone-100 rounded-[3rem] overflow-hidden">
-                        <img src="assets/images/afriaus.jpg" alt="Speaking" class="w-full h-full object-cover object-top  grayscale opacity-80">
+                <!-- 2. Workshops & Training -->
+                <div id="workshops" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch reveal">
+                    <div class="order-2 lg:order-1 relative min-h-[320px] bg-stone-100 rounded-[3rem] overflow-hidden">
+                        <img src="assets/videos/workshops/workshop-2.jpg" alt="Simangaliso presenting" class="absolute inset-0 w-full h-full object-cover object-top grayscale opacity-80" loading="lazy">
+                    </div>
+                    <div class="order-1 lg:order-2 p-12 bg-white border border-green-900/5 rounded-[3rem] shadow-sm">
+                        <div class="w-20 h-20 bg-warm rounded-3xl flex items-center justify-center mb-10">
+                            <i data-lucide="users" class="w-10 h-10 text-green-900"></i>
+                        </div>
+                        <h2 class="serif text-green-950 mb-8">Workshops & Training</h2>
+                        <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                            iMpande designs and facilitates reflective, participatory workshops grounded in culturally responsive, anti-oppressive and decolonial practice. We recognise that expertise does not give any one person exclusive ownership of knowledge. Our workshops bring specialist knowledge into dialogue with participants&rsquo; experiences and practice wisdom, creating opportunities for shared learning, critical reflection and meaningful discussion.
+                        </p>
+                        <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                            Topics may include cultural responsiveness, racism, racialised experiences, cultural humility, identity, power, intersectionality and systemic inequities. Alongside workshops, iMpande offers tailored training that integrates culturally responsive perspectives and practical application.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="workshops.html" class="btn-premium btn-outline px-8 py-4 text-xs uppercase tracking-widest inline-flex items-center gap-3"><i data-lucide="play-circle" class="w-4 h-4"></i> Watch Workshops in Action</a>
+                            <a href="mailto:asourceofhealing@impande.com.au?subject=Workshops%20%26%20Training%20enquiry" class="btn-premium px-8 py-4 text-xs uppercase tracking-widest">Enquire About Workshops & Training</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Professional Supervision & Reflective Practice -->
+                <div id="supervision" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch reveal">
+                    <div class="p-12 bg-warm rounded-[3rem]">
+                        <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-10 shadow-sm">
+                            <i data-lucide="user-check" class="w-10 h-10 text-green-900"></i>
+                        </div>
+                        <h2 class="serif text-green-950 mb-8">Professional Supervision & Reflective Practice</h2>
+                        <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                            Reflective supervision and consultation for practitioners and leaders navigating complex practice environments, professional growth, cultural considerations and systemic challenges. This includes opportunities to explore racism, racial dynamics, bias, power and the intersections of personal, professional and organisational experiences.
+                        </p>
+                        <a href="mailto:asourceofhealing@impande.com.au?subject=Supervision%20enquiry" class="btn-premium px-10 py-4 text-xs uppercase tracking-widest">Enquire About Supervision</a>
+                    </div>
+                    <div class="relative min-h-[320px] bg-stone-100 rounded-[3rem] overflow-hidden">
+                        <img src="assets/images/hands.jpeg" alt="Supervision" class="absolute inset-0 w-full h-full object-cover grayscale opacity-80" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- 4. Speaking Engagements -->
+                <div id="speaking" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch reveal">
+                    <div class="order-2 lg:order-1 relative min-h-[320px] bg-stone-100 rounded-[3rem] overflow-hidden">
+                        <img src="assets/images/afriaus.jpg" alt="Speaking" class="absolute inset-0 w-full h-full object-cover object-top grayscale opacity-80" loading="lazy">
                     </div>
                     <div class="order-1 lg:order-2 p-12 bg-white border border-green-900/5 rounded-[3rem] shadow-sm">
                         <div class="w-20 h-20 bg-warm rounded-3xl flex items-center justify-center mb-10">
@@ -102,53 +145,50 @@
                         </div>
                         <h2 class="serif text-green-950 mb-8">Speaking Engagements</h2>
                         <p class="text-stone-600 text-lg leading-relaxed mb-8">
-                            A trailblazer in multicultural social work, I am available for speaking engagements, including women’s events and expert panels. I share insights on race, power dynamics, and the liberation that comes from honest, validating conversations.
+                            Keynotes, panels and facilitated conversations exploring identity, belonging, racism, racial justice, power, leadership, cultural responsiveness and the experiences of racialised communities.
                         </p>
-                        <a href="book-now.html" class="btn-premium px-10 py-4 text-xs uppercase tracking-widest">Enquire for Speaking</a>
+                        <a href="mailto:asourceofhealing@impande.com.au?subject=Speaking%20enquiry" class="btn-premium px-10 py-4 text-xs uppercase tracking-widest">Enquire About Speaking</a>
                     </div>
                 </div>
 
-                <!-- 3. Individual Therapy -->
-                <div id="therapy" class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center reveal">
+                <!-- Featured event -->
+                <div class="reveal -mt-16 bg-warm rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                    <a href="assets/images/speaking-engagements/her-story-2026.jpeg" target="_blank" rel="noopener" class="shrink-0 block w-48 md:w-56 rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1 transition-transform" aria-label="View the HER Story 2026 poster">
+                        <img src="assets/images/speaking-engagements/her-story-2026.jpeg" alt="HER Story 2026 event poster" class="w-full h-auto" loading="lazy">
+                    </a>
+                    <div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-4 block">Featured event</span>
+                        <h3 class="serif text-green-950 mb-4">HER Story 2026</h3>
+                        <p class="text-stone-600 leading-relaxed mb-2">Art of the Minds &middot; Part of the Mental Health Week Festival</p>
+                        <p class="text-stone-500 text-sm">Sunday 18 October 2026 &middot; The Sands, Torquay</p>
+                    </div>
+                </div>
+
+                <!-- 5. Therapy & Counselling -->
+                <div id="therapy" class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch reveal">
                     <div class="p-12 bg-warm rounded-[3rem]">
                         <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center mb-10 shadow-sm">
                             <i data-lucide="heart" class="w-10 h-10 text-green-900"></i>
                         </div>
-                        <h2 class="serif text-green-950 mb-8">Individual Therapy</h2>
+                        <h2 class="serif text-green-950 mb-8">Therapy & Counselling</h2>
+                        <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                            iMpande offers culturally responsive and decolonial therapeutic support grounded in extensive professional experience across mental health, university counselling and sexual assault counselling and advocacy.
+                        </p>
+                        <p class="text-stone-600 text-lg leading-relaxed mb-6">
+                            Our approach recognises the intersections of mental health, trauma, identity, culture, race and lived experience, creating space for individuals to explore their experiences in ways that honour their dignity, strengths and personal circumstances.
+                        </p>
                         <p class="text-stone-600 text-lg leading-relaxed mb-8">
-                           Individual therapy is tailored to your needs, prioritising safety, privacy and gently
-guiding you through your healing journey. At iMpande, we offer the unique choice to
-participate in therapy in your native language, including isiNdebele, Shona, and
-English.
-</p>
-                        <ul class="space-y-4 text-stone-500 text-sm">
+                            We support individuals navigating emotional and psychological challenges, experiences of trauma, racism, identity, belonging and significant life transitions. Therapeutic services are available in English, isiNdebele and Shona.
+                        </p>
+                        <ul class="space-y-4 text-stone-500 text-sm mb-10">
                             <li class="flex items-center space-x-3"><i data-lucide="globe" class="w-5 h-5 text-green-900"></i><span>Language Choice (isiNdebele, Shona, English)</span></li>
                             <li class="flex items-center space-x-3"><i data-lucide="video" class="w-5 h-5 text-green-900"></i><span>Telehealth & Phone Consultations</span></li>
                             <li class="flex items-center space-x-3"><i data-lucide="shield" class="w-5 h-5 text-green-900"></i><span>Culturally Safe Environment</span></li>
                         </ul>
+                        <a href="book-now.html" class="btn-premium px-10 py-4 text-xs uppercase tracking-widest">Book a Therapy Consultation</a>
                     </div>
-                    <div class="aspect-square bg-stone-100 rounded-[3rem] overflow-hidden">
-                        <img src="assets/images/sima.jpg" alt="Therapy" class="w-full h-full object-cover grayscale opacity-80">
-                    </div>
-                </div>
-
-                <!-- 4. Individual Supervision & Reflective Practice -->
-                <div id="supervision" class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center reveal">
-                    <div class="order-2 lg:order-1 aspect-square bg-stone-100 rounded-[3rem] overflow-hidden">
-                        <img src="assets/images/hands.jpeg" alt="Supervision" class="w-full h-full object-cover grayscale opacity-80">
-                    </div>
-                    <div class="order-1 lg:order-2 p-12 bg-white border border-green-900/5 rounded-[3rem] shadow-sm">
-                        <div class="w-20 h-20 bg-warm rounded-3xl flex items-center justify-center mb-10">
-                            <i data-lucide="user-check" class="w-10 h-10 text-green-900"></i>
-                        </div>
-                        <h2 class="serif text-green-950 mb-8">Supervision & Reflective Practice</h2>
-                        <p class="text-stone-600 text-lg leading-relaxed mb-8">
-                            I offer individual supervision to newly graduated social workers and counsellors, focusing on the integration of ethical and culturally informed practices. My reflective practice sessions help teams address unconscious bias, racism, and microaggressions to enhance inclusivity.
-                        </p>
-                        <div class="grid grid-cols-2 gap-6 text-xs font-bold uppercase tracking-widest text-green-900">
-                            <div class="p-6 bg-warm rounded-2xl text-center">Individual Supervision</div>
-                            <div class="p-6 bg-warm rounded-2xl text-center">Reflective Practice</div>
-                        </div>
+                    <div class="relative min-h-[320px] bg-stone-100 rounded-[3rem] overflow-hidden">
+                        <img src="assets/images/sima.jpg" alt="Therapy" class="absolute inset-0 w-full h-full object-cover grayscale opacity-80" loading="lazy">
                     </div>
                 </div>
 

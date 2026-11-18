@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch highlights from iMpande workshops: reflective, participatory facilitation grounded in culturally responsive, anti-oppressive practice.">
+    <title>Workshops in Action | iMpande</title>
+    <link rel="icon" type="image/png" href="assets/images/logocircle.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="root-bg">
+
+    <!-- NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 nav-blur py-6">
+        <div class="container mx-auto px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-4 group">
+                <img src="assets/images/logocircle.png" alt="iMpande Logo" class="h-12 w-12 object-contain group-hover:rotate-12 transition-transform duration-700">
+                <div class="flex flex-col">
+                    <span class="text-2xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
+                </div>
+            </a>
+            <nav class="hidden xl:flex items-center space-x-6 whitespace-nowrap text-[13px] font-medium uppercase tracking-widest">
+                <a href="essence.html" class="link-underline">My Essence</a>
+                <a href="support.html" class="link-underline">Services</a>
+                <a href="consultancy.html" class="link-underline">Consultancy</a>
+                <a href="root.html" class="link-underline">The Root</a>
+                <a href="seed.html" class="link-underline">The Seed</a>
+                <a href="insights.html" class="link-underline">Insights</a>
+                <a href="giving-back.html" class="link-underline">Giving Back</a>
+                <a href="pricing.html"  class="link-underline">Pricing</a>
+                <a href="book-now.html" class="btn-premium px-6 py-2 text-[10px]">Book Now</a>
+            </nav>
+            <button id="menu-toggle" aria-label="Open menu" class="xl:hidden text-green-950 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white xl:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+        <a href="index.html">Home</a>
+        <a href="essence.html">My Essence</a>
+        <a href="support.html">Services</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="root.html">The Root</a>
+        <a href="seed.html">The Seed</a>
+        <a href="insights.html" class="link-underline">Insights</a>
+        <a href="giving-back.html">Giving Back</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="book-now.html" class="btn-premium px-12 py-5 text-lg">Book Now</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="section-padding pt-48 bg-warm">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Workshops & Training</h4>
+                <h1 class="text-green-950 serif mb-10" style="font-size: clamp(2.5rem, 6vw, 5rem);">Workshops <span class="italic">in action</span></h1>
+                <p class="text-stone-600 text-xl leading-relaxed">
+                    Reflective, participatory facilitation: shared learning, critical reflection and meaningful discussion. Select a clip to play it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section class="section-padding">
+        <div class="container mx-auto px-8">
+            <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <figure class="reveal">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-1.jpg" class="absolute inset-0 w-full h-full object-cover" data-workshop-video>
+                            <source src="assets/videos/workshops/workshop-1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <figcaption class="mt-5 flex items-baseline justify-between">
+                        <span class="serif text-xl text-green-950">Build-up workshops</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold">01</span>
+                    </figcaption>
+                </figure>
+                <figure class="reveal">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-2.jpg" class="absolute inset-0 w-full h-full object-cover" data-workshop-video>
+                            <source src="assets/videos/workshops/workshop-2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <figcaption class="mt-5 flex items-baseline justify-between">
+                        <span class="serif text-xl text-green-950">Prevention, not just reaction</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold">02</span>
+                    </figcaption>
+                </figure>
+                <figure class="reveal">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-3.jpg" class="absolute inset-0 w-full h-full object-cover" data-workshop-video>
+                            <source src="assets/videos/workshops/workshop-3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <figcaption class="mt-5 flex items-baseline justify-between">
+                        <span class="serif text-xl text-green-950">What's working well?</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold">03</span>
+                    </figcaption>
+                </figure>
+                <figure class="reveal">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-4.jpg" class="absolute inset-0 w-full h-full object-cover" data-workshop-video>
+                            <source src="assets/videos/workshops/workshop-4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <figcaption class="mt-5 flex items-baseline justify-between">
+                        <span class="serif text-xl text-green-950">Overlooked strengths</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold">04</span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="max-w-3xl mx-auto text-center mt-24 reveal">
+                <h2 class="serif text-green-950 mb-6">Bring a workshop to <span class="italic">your team</span></h2>
+                <div class="flex flex-wrap justify-center gap-4 mt-10">
+                    <a href="mailto:asourceofhealing@impande.com.au?subject=Workshops%20%26%20Training%20enquiry" class="btn-premium px-10 py-4 text-xs uppercase tracking-widest">Enquire About Workshops & Training</a>
+                    <a href="support.html#workshops" class="btn-premium btn-outline px-10 py-4 text-xs uppercase tracking-widest">Back to Services</a>
+                    <a href="insights.html" class="btn-premium btn-outline px-10 py-4 text-xs uppercase tracking-widest">More Reflections</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Only one clip plays at a time
+        const wv=[...document.querySelectorAll('[data-workshop-video]')];
+        wv.forEach(v=>v.addEventListener('play',()=>wv.forEach(o=>{if(o!==v)o.pause();})));
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="bg-warm pt-24 pb-12">
+        <div class="container mx-auto px-8">
+            <div class="pt-12 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-stone-400">
+                <span>&copy; <span id="year"></span> iMpande. All rights reserved.</span>
+                <span class="mt-4 md:mt-0">Sovereignty was never ceded. This was, is and will always be Aboriginal land.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

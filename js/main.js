@@ -25,6 +25,8 @@ if (menuToggle && mobileMenu) {
         const isActive = mobileMenu.classList.contains('active');
         
         // Toggle icon manually
+        menuToggle.setAttribute('aria-expanded', String(isActive));
+        menuToggle.setAttribute('aria-label', isActive ? 'Close menu' : 'Open menu');
         menuToggle.innerHTML = isActive 
             ? '<i data-lucide="x"></i>' 
             : '<i data-lucide="menu"></i>';
@@ -117,3 +119,17 @@ if (contactForm) {
         }, 1800);
     });
 }
+
+// Active nav link (desktop + mobile), based on current page
+(function () {
+    const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const alias = { 'workshops.html': 'support.html' };
+    const current = alias[file] || file;
+    document.querySelectorAll('header nav a:not(.btn-premium), #mobile-menu a:not(.btn-premium)').forEach(a => {
+        const href = (a.getAttribute('href') || '').split('#')[0].split('?')[0].toLowerCase();
+        const active = href === current;
+        a.classList.toggle('text-green-900', active);
+        if (active) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+})();

@@ -1,2 +1,6 @@
 .claude/
 .DS_Store
+*.MOV
+assets/videos/workshops-orig/
+*.docx
+node_modules/

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /invoice.html
+Sitemap: https://www.impande.com.au/sitemap.xml

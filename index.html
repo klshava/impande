@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="iMpande — Healing that reaches the root. Culturally responsive therapy and supervision designed for women of color to heal, grow, and reclaim their narratives.">
+    <meta name="description" content="iMpande — Healing that reaches the root. Consultancy, workshops and training, professional supervision, speaking engagements and culturally responsive therapy to strengthen culturally responsive, anti-oppressive and decolonial practice.">
     <title>iMpande | Healing that reaches the root.</title>
+    <link rel="icon" type="image/png" href="assets/images/logocircle.png">
     
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Modern Stack -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Custom Framework -->
+    <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Integrated Booking CDN -->
@@ -31,19 +32,19 @@
         <div class="container mx-auto px-8 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-4 group">
                 <div class="relative">
-                    <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-14 w-14 object-contain group-hover:rotate-12 transition-transform duration-700">
+                    <img src="assets/images/logocircle.png" alt="iMpande Logo" class="h-14 w-14 object-contain group-hover:rotate-12 transition-transform duration-700">
                 </div>
                 <div class="flex flex-col">
                     <span class="text-3xl font-semibold tracking-tight text-green-950 leading-none serif">iMpande</span>
-                    <span class="text-[10px] uppercase tracking-[0.25em] text-stone-500 mt-1">A Source of Healing</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-stone-500 mt-1 whitespace-nowrap">A Source of Healing</span>
                 </div>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center space-x-10 text-[13px] font-medium uppercase tracking-widest">
-                <a href="index.html" class="link-underline text-green-900">Home</a>
+            <nav class="hidden xl:flex items-center space-x-6 whitespace-nowrap text-[13px] font-medium uppercase tracking-widest">
                 <a href="essence.html" class="link-underline">My Essence</a>
-                <a href="support.html" class="link-underline">Support</a>
+                <a href="support.html" class="link-underline">Services</a>
+                <a href="consultancy.html" class="link-underline">Consultancy</a>
                 <a href="root.html" class="link-underline">The Root</a>
                 <a href="seed.html" class="link-underline">The Seed</a>
                 <a href="insights.html" class="link-underline">Insights</a>
@@ -53,7 +54,7 @@
             </nav>
 
             <!-- Mobile Toggle -->
-            <button id="menu-toggle" class="lg:hidden text-green-950 focus:outline-none">
+            <button id="menu-toggle" aria-label="Open menu" class="xl:hidden text-green-950 focus:outline-none">
                 <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
             </button>
         </div>
@@ -64,10 +65,11 @@
     </header>
 
     <!-- MOBILE MENU OVERLAY -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white lg:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white xl:hidden flex flex-col items-center justify-center space-y-10 text-3xl serif">
         <a href="index.html" class="hover:text-green-900">Home</a>
         <a href="essence.html" class="hover:text-green-900">My Essence</a>
-        <a href="support.html" class="hover:text-green-900">Support</a>
+        <a href="support.html" class="hover:text-green-900">Services</a>
+        <a href="consultancy.html" class="hover:text-green-900">Consultancy</a>
         <a href="root.html" class="hover:text-green-900">The Root</a>
         <a href="seed.html" class="hover:text-green-900">The Seed</a>
         <a href="insights.html" class="link-underline">Insights</a>
@@ -83,22 +85,23 @@
                 <div class="hero-reveal opacity-0 translate-y-10">
                     <span class="text-xs font-bold uppercase tracking-[0.4em] text-green-800 mb-8 block">Healing that reaches the root</span>
                     <h1 class="text-green-950 mb-10 serif">
-                        You deserve to be <br>
-                        <span class="italic text-earth-brown">fully seen & heard.</span>
+                        Culturally responsive practice. <br>
+                        <span class="italic text-earth-brown">Meaningful change.</span>
                     </h1>
                 </div>
-                
-                <p class="hero-reveal opacity-0 translate-y-10 text-xl md:text-2xl text-stone-600 mb-16 leading-relaxed max-w-3xl">
-                    Rooted in wisdom. Growing toward wholeness. <br class="hidden md:block">
-                    Culturally responsive therapy and supervision designed for individuals to be fully seen, heard, and supported.
-                </p>
+
+                <div class="hero-reveal opacity-0 translate-y-10 text-lg md:text-xl text-stone-600 mb-16 leading-relaxed max-w-3xl space-y-5">
+                    <p>iMpande provides consultancy, workshops and training, professional supervision and speaking engagements to support organisations and practitioners to strengthen culturally responsive, anti-oppressive and decolonial practice.</p>
+                    <p>Our work creates opportunities for critical reflection on culture, identity, racism, power and systemic inequities, and their influence on individuals, communities and professional practice.</p>
+                    <p>Alongside these services, iMpande offers culturally responsive therapeutic support that honours identity, language and lived experience.</p>
+                </div>
 
                 <div class="hero-reveal opacity-0 translate-y-10 flex flex-col sm:flex-row gap-8 items-start">
-                    <a href="book-now.html" class="btn-premium px-12 py-6 text-sm">
-                        Start Your Journey
+                    <a href="support.html" class="btn-premium px-12 py-6 text-sm">
+                        Explore Our Services
                     </a>
-                    <a href="essence.html" class="group flex items-center space-x-6 py-6">
-                        <span class="text-green-900 font-semibold border-b border-green-900/20 group-hover:border-green-900 transition-all duration-500 uppercase tracking-widest text-xs">Discover My Essence</span>
+                    <a href="mailto:asourceofhealing@impande.com.au?subject=Consultancy%20enquiry" class="group flex items-center space-x-6 py-6">
+                        <span class="text-green-900 font-semibold border-b border-green-900/20 group-hover:border-green-900 transition-all duration-500 uppercase tracking-widest text-xs">Enquire About Working Together</span>
                         <div class="w-12 h-12 rounded-full border border-green-900/10 flex items-center justify-center group-hover:bg-green-900 group-hover:text-white transition-all duration-500">
                             <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                         </div>
@@ -142,7 +145,7 @@
                 </div>
                 <div class="reveal relative">
                     <div class="aspect-square rounded-[3rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-1000">
-                        <img src="assets/images/CEO.png" alt="Simangaliso Nyoni" class="w-full h-full object-cover">
+                        <img src="assets/images/CEO.png" alt="Simangaliso Nyoni" class="w-full h-full object-cover" loading="lazy">
                     </div>
                     <div class="absolute -bottom-10 -left-10 bg-white p-10 rounded-3xl shadow-xl max-w-xs reveal">
                         <i data-lucide="quote" class="w-10 h-10 text-muted-gold mb-6"></i>
@@ -161,7 +164,7 @@
             <div class="flex flex-col lg:flex-row justify-between items-end mb-24 reveal">
                 <div class="max-w-2xl">
                     <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">How we walk together</h4>
-                    <h2 class="text-green-950 serif">Supportive Spaces for <br><span class="italic">Healing & Growth</span></h2>
+                    <h2 class="text-green-950 serif">Services for <br><span class="italic">Practice & Healing</span></h2>
                 </div>
                 <a href="support.html" class="group flex items-center space-x-4 mt-8 lg:mt-0">
                     <span class="text-xs font-bold uppercase tracking-widest">View All Services</span>
@@ -169,33 +172,71 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <!-- Service 1 -->
-                <div class="card-premium reveal">
+            <div id="services-scroll" class="flex overflow-x-auto snap-x snap-mandatory gap-8 pt-4 pb-10 -mx-8 px-8" style="scrollbar-width:thin" tabindex="0" aria-label="Services, scroll horizontally">
+                <!-- Service 1: Consultancy (featured) -->
+                <div class="card-premium reveal flex-none w-[300px] md:w-[360px] snap-start">
+                    <div class="w-16 h-16 bg-warm rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="compass" class="w-8 h-8 text-green-900"></i>
+                    </div>
+                    <h3 class="serif text-2xl text-green-950 mb-6">Consultancy</h3>
+                    <p class="text-stone-500 mb-8">Working alongside organisations to strengthen culturally responsive, anti-oppressive and decolonial practice across services, teams and systems.</p>
+                    <a href="consultancy.html" class="text-xs font-bold text-green-900 hover:text-muted-gold transition-colors">Learn More</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="card-premium reveal flex-none w-[300px] md:w-[360px] snap-start" style="transition-delay: 0.1s">
                     <div class="w-16 h-16 bg-warm rounded-2xl flex items-center justify-center mb-8">
                         <i data-lucide="users" class="w-8 h-8 text-green-900"></i>
                     </div>
                     <h3 class="serif text-2xl text-green-950 mb-6">Workshops & Training</h3>
-                    <p class="text-stone-500 mb-8">Fostering culturally responsive practices for organizations through anti-oppressive theories.</p>
+                    <p class="text-stone-500 mb-8">Reflective, participatory workshops and tailored training grounded in culturally responsive, anti-oppressive and decolonial practice.</p>
                     <a href="support.html#workshops" class="text-xs font-bold text-green-900 hover:text-muted-gold transition-colors">Learn More</a>
                 </div>
-                <!-- Service 2 -->
-                <div class="card-premium reveal" style="transition-delay: 0.1s">
+                <!-- Service 3 -->
+                <div class="card-premium reveal flex-none w-[300px] md:w-[360px] snap-start" style="transition-delay: 0.2s">
+                    <div class="w-16 h-16 bg-warm rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="user-check" class="w-8 h-8 text-green-900"></i>
+                    </div>
+                    <h3 class="serif text-2xl text-green-950 mb-6">Professional Supervision & Reflective Practice</h3>
+                    <p class="text-stone-500 mb-8">Reflective supervision and consultation for practitioners and leaders navigating complex practice environments and systemic challenges.</p>
+                    <a href="support.html#supervision" class="text-xs font-bold text-green-900 hover:text-muted-gold transition-colors">Learn More</a>
+                </div>
+                <!-- Service 4 -->
+                <div class="card-premium reveal flex-none w-[300px] md:w-[360px] snap-start">
                     <div class="w-16 h-16 bg-warm rounded-2xl flex items-center justify-center mb-8">
                         <i data-lucide="mic" class="w-8 h-8 text-green-900"></i>
                     </div>
                     <h3 class="serif text-2xl text-green-950 mb-6">Speaking Engagements</h3>
-                    <p class="text-stone-500 mb-8">Impactful presence at women's events and panels, sharing wisdom on decolonial practice.</p>
+                    <p class="text-stone-500 mb-8">Keynotes, panels and facilitated conversations on identity, belonging, racism, racial justice, power and leadership.</p>
                     <a href="support.html#speaking" class="text-xs font-bold text-green-900 hover:text-muted-gold transition-colors">Learn More</a>
                 </div>
-                <!-- Service 3 -->
-                <div class="card-premium reveal" style="transition-delay: 0.2s">
+                <!-- Service 5 -->
+                <div class="card-premium reveal flex-none w-[300px] md:w-[360px] snap-start" style="transition-delay: 0.1s">
                     <div class="w-16 h-16 bg-warm rounded-2xl flex items-center justify-center mb-8">
                         <i data-lucide="heart" class="w-8 h-8 text-green-900"></i>
                     </div>
-                    <h3 class="serif text-2xl text-green-950 mb-6">Individual Therapy</h3>
-                    <p class="text-stone-500 mb-8">Tailored therapy prioritizing privacy and choice, including therapy in your native language.</p>
+                    <h3 class="serif text-2xl text-green-950 mb-6">Therapy & Counselling</h3>
+                    <p class="text-stone-500 mb-8">Culturally responsive and decolonial therapeutic support, available in English, isiNdebele and Shona.</p>
                     <a href="support.html#therapy" class="text-xs font-bold text-green-900 hover:text-muted-gold transition-colors">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR APPROACH: CURIOSITY CYCLE (TEASER) -->
+    <section class="section-padding">
+        <div class="container mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Our Approach</h4>
+                    <h2 class="text-green-950 serif mb-8">The iMpande <span class="italic">Curiosity Cycle</span></h2>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-6">At iMpande, we believe culturally responsive practice begins with curiosity, not assumptions.</p>
+                    <p class="text-stone-600 text-lg leading-relaxed mb-10">Notice, be curious, make meaning and respond: a continuous practice of learning, reflection and shared understanding.</p>
+                    <a href="approach.html" class="btn-premium px-10 py-4 text-xs uppercase tracking-widest">Explore Our Approach</a>
+                </div>
+                <div class="reveal">
+                    <a href="approach.html" aria-label="Explore the iMpande Curiosity Cycle">
+                        <img src="assets/images/curiosity-cycle.png" alt="The iMpande Curiosity Cycle: Notice, Be curious, Meaning making, Respond" class="w-full rounded-3xl shadow-xl" loading="lazy">
+                    </a>
                 </div>
             </div>
         </div>
@@ -204,10 +245,10 @@
         <!-- INSIGHTS: ROOTED REFLECTIONS (PREVIEW) -->
     <section class="section-padding bg-warm">
         <div class="container mx-auto px-8">
-            <div class="flex flex-col lg:flex-row justify-between items-end mb-24 reveal">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-16 reveal">
                 <div class="max-w-2xl">
                     <h4 class="text-xs text-green-800 mb-6 uppercase tracking-widest">Insights & Reflections</h4>
-                    <h2 class="text-green-950 serif">Rooted <span class="italic">Reflections</span></h2>
+                    <h2 class="text-green-950 serif">Latest <span class="italic">Videos</span></h2>
                 </div>
                 <a href="insights.html" class="group flex items-center space-x-4 mt-8 lg:mt-0">
                     <span class="text-xs font-bold uppercase tracking-widest">Watch More Reflections</span>
@@ -215,38 +256,92 @@
                 </a>
             </div>
 
-          <div class="max-w-5xl mx-auto reveal">
-    <div class="card-premium p-0 overflow-hidden shadow-xl border border-green-900/5">
-        <div class="flex flex-col lg:flex-row items-start lg:items-center">
-            <!-- VIDEO (Portrait) -->
-            <div class="w-full lg:w-1/3 mb-8 lg:mb-0" style="aspect-ratio: 3 / 4;">
-                <video controls class="w-full h-full object-cover rounded-xl">
-                    <source src="assets/videos/mentorship.mp4" type="video/mp4">
-                </video>
+            <div class="relative reveal">
+                <div id="video-scroll" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pt-2 pb-8 -mx-8 px-8" style="scrollbar-width:thin" tabindex="0" aria-label="Latest videos, scroll horizontally">
+                <article class="flex-none w-[240px] md:w-[280px] snap-start">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/introduction.jpg" class="absolute inset-0 w-full h-full object-cover" data-home-video>
+                            <source src="assets/videos/introduction.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mt-5 mb-2 block">Latest &middot; Reflection</span>
+                    <h3 class="serif text-xl text-green-950 leading-snug">Burnout and racial fatigue</h3>
+                </article>
+                <article class="flex-none w-[240px] md:w-[280px] snap-start">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-1.jpg" class="absolute inset-0 w-full h-full object-cover" data-home-video>
+                            <source src="assets/videos/workshops/workshop-1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mt-5 mb-2 block">Latest &middot; Workshop</span>
+                    <h3 class="serif text-xl text-green-950 leading-snug">Build-up workshops</h3>
+                </article>
+                <article class="flex-none w-[240px] md:w-[280px] snap-start">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-2.jpg" class="absolute inset-0 w-full h-full object-cover" data-home-video>
+                            <source src="assets/videos/workshops/workshop-2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mt-5 mb-2 block">Latest &middot; Workshop</span>
+                    <h3 class="serif text-xl text-green-950 leading-snug">Prevention, not just reaction</h3>
+                </article>
+                <article class="flex-none w-[240px] md:w-[280px] snap-start">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-3.jpg" class="absolute inset-0 w-full h-full object-cover" data-home-video>
+                            <source src="assets/videos/workshops/workshop-3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mt-5 mb-2 block">Latest &middot; Workshop</span>
+                    <h3 class="serif text-xl text-green-950 leading-snug">What's working well?</h3>
+                </article>
+                <article class="flex-none w-[240px] md:w-[280px] snap-start">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="none" poster="assets/videos/workshops/workshop-4.jpg" class="absolute inset-0 w-full h-full object-cover" data-home-video>
+                            <source src="assets/videos/workshops/workshop-4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mt-5 mb-2 block">Latest &middot; Workshop</span>
+                    <h3 class="serif text-xl text-green-950 leading-snug">Overlooked strengths</h3>
+                </article>
+                <article class="flex-none w-[240px] md:w-[280px] snap-start">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover" data-home-video>
+                            <source src="assets/videos/mentorship.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mt-5 mb-2 block">Reflection</span>
+                    <h3 class="serif text-xl text-green-950 leading-snug">Mentorship, coaching and sponsorship</h3>
+                </article>
+                <article class="flex-none w-[240px] md:w-[280px] snap-start">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lg bg-black aspect-[3/4]">
+                        <video controls playsinline preload="metadata" class="absolute inset-0 w-full h-full object-cover" data-home-video>
+                            <source src="assets/videos/supervision.mp4#t=0.1" type="video/mp4">
+                        </video>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mt-5 mb-2 block">Reflection</span>
+                    <h3 class="serif text-xl text-green-950 leading-snug">Supervision</h3>
+                </article>
+                </div>
+                <div class="flex items-center justify-between mt-4">
+                    <a href="workshops.html" class="text-xs font-bold uppercase tracking-widest text-green-900 hover:text-muted-gold transition-colors flex items-center gap-2"><i data-lucide="play-circle" class="w-4 h-4"></i> Workshops in action</a>
+                    <div class="flex gap-3">
+                        <button type="button" id="video-prev" class="w-11 h-11 bg-white border border-stone-100 rounded-full shadow flex items-center justify-center hover:bg-green-900 hover:text-white transition-all" aria-label="Previous videos"><i data-lucide="chevron-left"></i></button>
+                        <button type="button" id="video-next" class="w-11 h-11 bg-white border border-stone-100 rounded-full shadow flex items-center justify-center hover:bg-green-900 hover:text-white transition-all" aria-label="Next videos"><i data-lucide="chevron-right"></i></button>
+                    </div>
+                </div>
             </div>
-
-            <!-- TEXT -->
-            <div class="w-full lg:w-2/3 lg:pl-12 p-6 lg:p-16">
-                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-gold mb-6 block">Latest Insight</span>
-                <h3 class="serif text-3xl text-green-950 mb-6">Mentorship, coaching and sponsorship</h3>
-                <p class="text-stone-500 leading-relaxed mb-8">
-                    Mentorship without sponsorship can leave skilled and deserving minoritised employees stuck proving themselves without gaining access to opportunities. Sponsorship can open doors, but when it is primarily offered by people already in positions of dominance, it can reproduce the very hierarchies that the workplace claims to challenge.
-
-True equity happens at the intersection of mentorship, sponsorship, and structural change. It’s not enough to guide and prepare workers ,we must also redistribute power, confront bias, and create opportunities that don’t depend on permission from those who historically controlled access.
-
-Mentorship prepares you. Sponsorship positions you. Equity demands we shift who controls the door.
-                </p>
-                <a href="insights.html" class="text-xs font-bold text-green-900 hover:text-muted-gold transition-colors flex items-center space-x-2">
-                    <span>Explore the Series</span>
-                    <i data-lucide="play-circle" class="w-4 h-4"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-        </div>
-
         </div>
     </section>
+
+    <script>
+        (function(){
+            const sc=document.getElementById('video-scroll');
+            document.getElementById('video-prev').onclick=()=>sc.scrollBy({left:-300,behavior:'smooth'});
+            document.getElementById('video-next').onclick=()=>sc.scrollBy({left:300,behavior:'smooth'});
+            const vs=[...sc.querySelectorAll('[data-home-video]')];
+            vs.forEach(v=>v.addEventListener('play',()=>vs.forEach(o=>{if(o!==v)o.pause();})));
+        })();
+    </script>
 
     <!-- TESTIMONIALS: VOICES OF HEALING -->
     <section class="section-padding bg-dark overflow-hidden">
@@ -352,22 +447,29 @@ Mentorship prepares you. Sponsorship positions you. Equity demands we shift who 
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-24">
                 <div class="lg:col-span-2">
                     <a href="index.html" class="flex items-center space-x-4 mb-8">
-                        <img src="https://r2-bucket.flowith.net/f/8ca86f3aaee9ecad/logocircle%2540409x409.png" alt="iMpande Logo" class="h-12 w-12 opacity-80 grayscale">
+                        <img src="assets/images/logocircle.png" alt="iMpande Logo" class="h-12 w-12 opacity-80 grayscale">
                         <span class="serif text-3xl text-green-950">iMpande</span>
                     </a>
-                    <p class="text-stone-500 max-w-sm mb-10 leading-relaxed">
-                        Culturally responsive therapy and supervision designed for individuals to be fully seen, heard, and supported.
+                    <p class="text-stone-500 max-w-sm mb-8 leading-relaxed">
+                        Consultancy, workshops and training, professional supervision, speaking engagements and culturally responsive therapeutic support.
                     </p>
+                    <div class="mb-8 text-sm text-stone-600 space-y-1">
+                        <p><a href="tel:+61422060968" class="hover:text-green-900 transition-colors">+61 422 060 968</a></p>
+                        <p><a href="mailto:asourceofhealing@impande.com.au" class="hover:text-green-900 transition-colors">asourceofhealing@impande.com.au</a></p>
+                    </div>
+                    <a href="book-now.html" class="btn-premium px-8 py-3 text-xs mb-10 inline-flex">Get in Touch</a>
                     <div class="flex space-x-6">
-                        <a href="https://www.instagram.com/impandeasource" class="text-stone-400 hover:text-green-900 transition-colors"><i data-lucide="instagram"></i></a>
-                        <a href="https://open.spotify.com/show/7ib6lkrP7qBX7qDbwWvdSQ" class="text-stone-400 hover:text-green-900 transition-colors"><i data-lucide="spotify"></i></a>
+                        <a href="https://www.instagram.com/impandeasource" class="text-stone-400 hover:text-green-900 transition-colors" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+                        <a href="https://open.spotify.com/show/7ib6lkrP7qBX7qDbwWvdSQ" class="text-stone-400 hover:text-green-900 transition-colors" aria-label="Spotify podcast" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7 9.5c3.5-1 7.5-.6 10.5 1.2M7.5 12.5c3-.8 6-.5 8.5 1M8 15.3c2.3-.6 4.5-.3 6.5.8"/></svg></a>
                     </div>
                 </div>
                 <div>
                     <h4 class="text-xs font-bold uppercase tracking-widest text-green-900 mb-8">Explore</h4>
                     <ul class="space-y-4 text-stone-500 text-sm">
                         <li><a href="essence.html" class="hover:text-green-900 transition-colors">My Essence</a></li>
-                        <li><a href="support.html" class="hover:text-green-900 transition-colors">Support Services</a></li>
+                        <li><a href="support.html" class="hover:text-green-900 transition-colors">Services</a></li>
+                        <li><a href="consultancy.html" class="hover:text-green-900 transition-colors">Consultancy</a></li>
+                        <li><a href="approach.html" class="hover:text-green-900 transition-colors">Our Approach</a></li>
                         <li><a href="giving-back.html" class="hover:text-green-900 transition-colors">Giving Back</a></li>
                         <li><a href="publications.html" class="hover:text-green-900 transition-colors">Publications</a></li>
                     </ul>
